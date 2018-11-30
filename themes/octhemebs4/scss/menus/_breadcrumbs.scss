@@ -1,0 +1,36 @@
+//breadcrumbs menu
+
+.breadcrumbs {
+  margin-top: 2rem;
+  ul,
+  ol {
+    list-style: none;
+    display: flex;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    &::after {
+      //content: "\00A0 > \00A0";
+      content: ">";
+      color: $color-font-secondary;
+      padding: 0 .5rem;
+    }
+    
+    &:last-child {
+      &::after {
+        content: "";
+      }
+    }
+  }
+  
+  a {
+    color: $color-font-secondary;
+    text-decoration: none;
+    @include focus {
+      text-decoration: underline;
+    }
+    
+  }
+}

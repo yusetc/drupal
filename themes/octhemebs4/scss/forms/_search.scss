@@ -1,0 +1,22 @@
+//search form
+
+//search block
+
+#search-block-form {
+  input[type="submit"] {
+    //color: transparent;
+    //background: black;
+  }
+}
+#search-form {
+  .button {
+    @extend .button-primary;
+    outline: 0;
+    @extend .mt-3;
+  }
+  
+  .search-help-link {
+    display: inline-block;
+    @extend .mt-1, .mb-1;
+  }
+}

@@ -1,0 +1,112 @@
+.color-combo- {
+  &wb {
+    color: white;
+    background-color: black;
+  }
+  
+  &bw {
+    color: black;
+    background-color: white;
+  }
+}
+
+
+
+//#d61673 Bright Pink used on buttons, headings etc
+.color-primary {
+  color: $color-primary;
+}
+
+.color-primary-bg {
+  background: $color-primary;
+}
+
+//#00abc9 bright blue
+.color-secondary {
+  color: $color-secondary;
+}
+
+.color-secondary-bg {
+  background: $color-secondary;
+}
+
+//##0f0f0f Dark grey, almost black
+.color-font-primary {
+  color: $color-font-primary;
+}
+
+.color-font-primary-bg {
+  background: $color-font-primary;
+}
+
+//#00506c dark blue
+.color-font-secondary {
+  color: $color-font-secondary;
+}
+
+.color-font-secondary-bg {
+  background: $color-font-secondary;
+}
+
+//#337ab7 mid range grey-blue, used on inline links
+.color-font-inline-link {
+  color: $color-font-inline-link;
+}
+
+.color-font-inline-link-bg {
+  background: $color-font-inline-link;
+}
+
+//#4d4d4f extra light grey, almost white
+.color-extra-light {
+  color: $color-extra-light;
+}
+
+.color-extra-light-bg {
+  background: $color-extra-light;
+}
+
+//#d1d3d4 a pale grey
+//a light grey, use for borders etc on dark blackground
+.color-light {
+  color: $color-light;
+}
+
+.color-light-bg {
+  background: $color-light;
+}
+
+//#ccc a medium grey, normally used borders
+.color-middle {
+  color: $color-middle;
+}
+
+.color-middle-bg {
+  background: $color-middle;
+}
+
+//#4d4d4f a dark grey
+.color-middle-dark {
+  color: $color-middle-dark;
+}
+
+.color-middle-bg {
+  background: $color-middle-dark;
+}
+
+//#202D37 dark grey, almost black
+.color-dark {
+  color: $color-dark;
+}
+
+//#202D37 dark grey, almost black
+.color-dark-bg {
+  background: $color-dark;
+}
+
+//special colors for unuque page elements
+
+.clr-chart-01 {color:#7ABDE8}
+.clr-chart-02 {color:#7D2349;}
+.clr-chart-03 {color:#42AFC9;}
+.clr-chart-04 {color:#DC4205;}

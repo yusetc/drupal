@@ -1,0 +1,22 @@
+// the view that displays past grant recipients
+.view-past-grant-recipients {
+  h3 {
+    color: $color-primary;
+    font-size: 2rem;
+  }
+  
+  a {
+    text-decoration: none;
+    @include focus {
+      text-decoration: underline;
+    }
+  }
+
+  .views-row {
+    margin-bottom: 2rem;
+
+    .grant-title {
+      font-weight: bold;
+    }
+  }
+}

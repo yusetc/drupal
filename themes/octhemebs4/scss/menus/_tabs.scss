@@ -1,0 +1,21 @@
+//tabs
+
+
+.tabs {
+  @extend .nav;
+  @extend .nav-tabs;
+  li {
+    @extend .nav-item;
+    
+    a {
+      @extend .nav-link;
+      text-decoration: none;
+      margin-bottom: -1px;
+    }
+    
+    a.is-active {
+      @extend .active;
+      
+    }
+  }
+}

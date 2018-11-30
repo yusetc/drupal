@@ -1,0 +1,12 @@
+<svg id="facebook" class="icon ico-facebook" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 146 146">
+  <defs>
+    <style>
+      .fb-circle{fill:none;stroke:#3c5a99;stroke-width:4px;}
+      .fb-circle,
+      .fb-f{stroke-miterlimit:10;}
+      .fb-f{fill:#3c5a99;stroke:#fff;}
+    </style>
+  </defs>
+  <circle class="fb-circle" cx="73" cy="72.83" r="67.01"/>
+  <path id="f" class="fb-f" d="M80.65 135.8V90.71h15.14l2.26-17.57h-17.4V61.92c0-5.08 1.42-8.55 8.71-8.55h9.31V37.65A123.21 123.21 0 0 0 85.11 37c-13.42 0-22.6 8.19-22.6 23.22v13H47.33v17.49h15.18v45.09z"/>
+</svg>

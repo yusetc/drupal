@@ -1,0 +1,338 @@
+// card styles
+
+// card 01 
+// image, title and link, 2 columns used for featured content on front page
+
+$cardMargin: 1.87rem;
+
+.card-style-01 {
+  text-align: center;
+  margin-top: $cardMargin;
+
+  .card {
+    border: 0;
+  }
+
+  img {
+    display: block;
+    margin: 1rem auto 0;
+
+    @include remSize(max-width, 130px);
+  }
+
+  h2 {
+    @include fontSize(24px);
+    @include remSize(margin-top, 20px);
+    @include remSize(margin-bottom, 30px);
+
+    font-weight: normal;
+  }
+
+  .row {
+    > div {
+      margin-bottom: 2rem;
+
+      @include media-breakpoint-up(md) {
+        @include odd {
+          border-right: 3px dotted $color-middle;
+        }
+      }
+    }
+  }
+}
+
+//card 02
+// image, title and source used for innovation blocks on front page
+
+.card-style-02 {
+  margin-bottom: 3rem;
+  
+
+  .card {
+    border: 0;
+  }
+
+  .card-body {
+    p {
+      margin-bottom: .5rem;
+    }
+  }
+
+  a {
+    text-decoration: none;
+
+    @include fontSize(18px);
+    @include focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+//card 03
+// text, and source, used for podcasts
+.card-style-03 {
+  padding-bottom: 1rem;
+
+  h2 {
+    margin: 2rem 0 0 2rem;
+    color: $color-primary;
+  }
+
+  .card {
+    background: transparent;
+    border: 0;
+  }
+
+  a.button-primary {
+    display: inline;
+  }
+}
+
+//card 04
+// image, title, summary and link, featured content used on Innovation page
+.card-style-04 {
+  text-align: center;
+  margin-top: $cardMargin;
+
+  .card {
+    border: 0;
+    border-bottom: 3px dotted $color-middle;
+    padding: 1rem 0;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  img {
+    display: block;
+    margin: 1rem auto 0;
+
+    @include remSize(max-width, 130px);
+  }
+
+  h2 {
+    @include fontSize(24px);
+    @include remSize(margin-top, 20px);
+    @include remSize(margin-bottom, 30px);
+
+    color: $color-primary;
+    font-weight: normal;
+  }
+
+  .card-text {
+    text-align: left;
+  }
+}
+
+//card 05
+.block-views-blockoc-show-card-on-page-block-4 {
+  > h2 {
+    color: $color-primary;
+    text-align: center;
+  }
+}
+.card-style-05 {
+  text-align: center;
+  margin-top: $cardMargin;
+  
+  .col {
+    margin-bottom: 4rem !important;
+  }
+
+  .card {
+    border: 0;
+    border-bottom: 3px dotted $color-middle;
+
+    @include media-breakpoint-up(md) {
+      border-bottom: 0;
+    }
+
+
+    .card-text {
+      text-align: left;
+      margin-bottom: 1.87rem;
+    }
+
+    .field--type-decimal {
+      .field__label {
+        font-weight: normal;
+        &:after {
+          content: ":";
+        }
+      }
+      
+      .field__item {
+        color: $color-primary;
+        font-weight: 500;
+      }
+      
+    }
+    
+  }
+
+
+  .date-range {
+    @include fontSize(18px);
+
+    margin-bottom: 1rem;
+  }
+
+  img {
+    display: block;
+    margin: 1rem auto 0;
+  }
+
+  h2 {
+    @include fontSize(24px);
+    @include remSize(margin-top, 20px);
+    @include remSize(margin-bottom, 30px);
+
+    font-weight: normal;
+  }
+
+  .row {
+    > div {
+      margin-bottom: 2rem;
+
+      @include media-breakpoint-up(md) {
+        border-right: 3px dotted $color-middle;
+
+        @include even {
+          border-right: 0;
+        }
+      }
+
+
+      @include media-breakpoint-up(lg) {
+        @include even {
+          border-right: 3px dotted $color-middle;
+        }
+
+
+        &:nth-child(3n) {
+          border-right: 0;
+        }
+      }
+    }
+  }
+}
+
+//card 09
+// image, title, link summary: used on Learn page to showcase featured links
+.card-style-09 {
+  text-align: center;
+  margin-top: $cardMargin;
+
+  .card {
+    border: 0;
+    border-bottom: 3px dotted $color-middle;
+
+    @include media-breakpoint-up(md) {
+      border-bottom: 0;
+    }
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+
+    @include remSize(max-width, 130px);
+  }
+
+  h2 {
+    @include fontSize(24px);
+    @include remSize(margin-top, 20px);
+    @include remSize(margin-bottom, 30px);
+
+    font-weight: normal;
+    color: $color-primary;
+  }
+
+  .row {
+    > div {
+      margin-bottom: 2rem;
+
+      @include media-breakpoint-up(md) {
+        border-right: 3px dotted $color-middle;
+
+        @include even {
+          border-right: 0;
+        }
+      }
+
+
+      @include media-breakpoint-up(lg) {
+        @include even {
+          border-right: 3px dotted $color-middle;
+        }
+
+
+        &:nth-child(4n) {
+          border-right: 0;
+        }
+      }
+    }
+  }
+
+  .card-text {
+    margin-top: 1.87rem;
+    text-align: left;
+  }
+}
+
+
+
+//on clinical resources page
+.card-style-06 { 
+  margin-bottom: 3rem;
+  text-align: center;
+
+ .row > div {
+    border-bottom: 3px dotted $color-middle;
+    @include media-breakpoint-up(md) {
+      border-bottom: 0;
+      border-right: 3px dotted $color-middle;
+      &:nth-child(3n) {
+        border-right: 0;
+      }
+    } 
+    
+    
+  } 
+  
+  .col {
+    margin-bottom: 3rem;
+  }
+  
+  .card {
+    border: 0;
+    text-align: center;
+    
+
+ h2.card-title {
+      margin-bottom: 1rem;
+      font-weight: normal;
+      font-size: 1.5rem;
+    }
+
+  }
+
+  .card-body {
+    p {
+      margin-bottom: .5rem;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    @include fontSize(18px);
+    margin-top: 1rem !important;
+    @include focus {
+      text-decoration: underline;
+    }
+  }
+
+}
+
+

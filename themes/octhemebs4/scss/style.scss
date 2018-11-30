@@ -1,0 +1,101 @@
+//stylesheet for joulecma.ca 
+//prepared by openconcept consulting. http://openconcept.ca
+
+
+// #####   Manifest #####
+//site wide
+@import
+"bootstrap-4.1.3/bootstrap",
+"variables",
+"mixins",
+"typography",
+"html",
+"layout",
+"helpers",
+"accessibility";
+
+// components. Components set specific apparance.
+
+@import
+"components/icons",
+"components/buttons-and-links",
+"components/decorations",
+"components/colors",
+"components/banners";
+
+@import 
+"cards/card";
+
+//menus
+@import 
+//"menus/_menu-main-navigation",
+//"menus/_menu-secondary-navigation",
+"menus/nav-utility",
+"menus/nav-footer",
+"menus/nav-main",
+"menus/breadcrumbs",
+"menus/social-media",
+"menus/tabs",
+"menus/breadcrumbs",
+"menus/accounting-preferences",
+"menus/clinical-resources-megamenu",
+"menus/pager";
+
+
+//blocks
+@import "blocks/block",
+"blocks/language-selector",
+"blocks/block-search",
+"blocks/copyrightnotice";
+
+
+//regions
+@import
+"regions/r-utility-nav",
+"regions/r-header",
+"regions/r-main-nav",
+"regions/r-conditional-blocks",
+"regions/r-footer",
+"regions/r-search",
+"regions/r-content",
+"regions/r-breadcrumb",
+"regions/r-highlighted",
+"regions/r-help";
+
+//nodes
+//@import "nodes/..";
+
+//forms
+@import "forms/comment",
+"forms/search",
+"forms/user-login-form";
+
+//views
+@import 
+"views/oc-get-inspired",
+"views/simple-views",
+"views/past-grant-recipients";
+
+//custom display modes
+@import 
+"display-modes/course-layout",
+"display-modes/profile";
+
+//special
+@import "front",
+"ckeditor";
+
+@import "clinical-resources/clinical-resources";
+
+//over-rides - Make sure this is last
+
+//Overrides
+//used to override styles set by modules and parent themes and browser fixes
+@import "overrides",
+"ie11-fixes",
+"ms-edge-fixes";
+
+@import "development";
+
+
+

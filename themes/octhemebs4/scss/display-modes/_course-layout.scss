@@ -1,0 +1,66 @@
+.course-layout {
+  .field--name-field-summary {
+      @extend .attention;
+      margin-bottom: 1.15rem;
+  }
+  
+  [class*="member-price"],
+  [class*="class-size"] {
+    display: flex;
+    flex-wrap: wrap;
+    .field__item {
+      font-size: 1.33rem;
+      &:before {
+        content: ":\00A0";
+        display: inline-block;
+        color: $color-font-primary;
+      }
+    }
+  }
+  
+  [class*="member-price"] {
+    .field__item {
+      color: $color-primary;
+    }
+  }
+  
+  [class*="contact-email"],
+  [class*="register-link"] {
+    a {
+      @extend .button-primary;
+      display: inline-block;
+    }
+  }
+  
+  .course-col {
+    margin-bottom: 2rem;
+    h2 {
+      font-weight: normal;
+      @include fontSize(24px);
+      color: $color-primary;
+    }
+    
+    > .field {
+      margin-bottom: 1rem;
+    }
+    
+    .field__label {
+      font-size: 1.33rem;
+    }
+    
+  }
+  
+  .course-icon {
+    @include remSize(width,90px);
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .field--name-field-online-course-information,
+  .field--name-field-face-course-information {
+    h2 {
+      color: inherit;
+      margin-bottom: 0;
+    }
+  }
+}

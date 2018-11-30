@@ -1,0 +1,29 @@
+//used for things that serve no purpose other than to decorate the site
+
+//borders
+.border-dotted {
+  border: 3px dotted $color-middle !important;
+}
+.border-dotted-t {
+  border-top: 3px dotted $color-middle !important;
+}
+
+.border-dotted-r {
+  border-right: 3px dotted $color-middle !important;
+}
+
+.border-dotted-b {
+  border-bottom: 3px dotted $color-middle !important;
+}
+
+.border-dotted-l {
+  border-left: 3px dotted $color-middle !important;
+}
+
+.text-formatted {
+  hr {
+    @extend .border-dotted-t;
+  }
+}
+
+hr.plain {border: 0;}

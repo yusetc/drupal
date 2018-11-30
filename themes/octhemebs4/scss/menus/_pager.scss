@@ -1,0 +1,26 @@
+//pager
+
+
+  
+.pager__items {
+  @extend .pagination,
+  .justify-content-center;
+  
+  li {
+    @extend .page-item;
+    //outline: 0;
+    
+    a {
+      @extend .page-link;
+      border: 0;
+      &:focus {
+        background: $color-primary;
+        color: white;
+        outline: 0 !important;
+        box-shadow: none;
+      }
+    }
+  }
+   
+}
+

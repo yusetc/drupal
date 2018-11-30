@@ -1,0 +1,41 @@
+# for this theme to work properly, bootstrap 4 is required. See the Readme file
+
+
+name: OC Theme
+description: 'A subtheme of classy'
+package: custom
+type: theme
+version: 1.1
+core: 8.x
+base theme: classy
+
+libraries:
+  - octhemebs4/global-styling
+  - octhemebs4/bootstrap
+  - octhemebs4/global-script
+  
+ckeditor_stylesheets:
+  - css/style.css
+
+#remove classy css  
+libraries-override:
+  classy/base: false
+
+# Regions
+# add regions here
+# below are the Drupal default regions
+regions:
+  utility_nav: 'Utility Navigation'
+  header: 'Branding'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  search: 'Search'
+  main_nav: 'Main Navigation'
+  conditional_blocks: 'conditional blocks'
+  breadcrumb: 'Breadcrumb'
+  top_content: 'Top Content'
+  content: 'Content Main'
+  aside: 'Aside'
+  content_bottom: 'Content Bottom'
+  footer: 'Footer'
+  

@@ -1,0 +1,97 @@
+//Typography is fir setting up the appearance of type. The fonts themselves should be kept in the fonts folder along with the css file needed to defint the font
+
+//Import fonts 
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,500,700');
+  
+
+html {
+  font-family: 'Ubuntu', sans-serif;
+    @include media-breakpoint-up(md) {
+      @include fontSize(17px);
+    }
+    
+    @include media-breakpoint-up(xl) {
+      @include fontSize(19px);
+    }
+}
+
+body {
+  color: $color-font-primary;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+h1.page-title {
+  @include fontSize(36px);
+  font-weight: 300;
+  color: $color-primary;
+  
+
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+@include headings {
+  margin-bottom: 1.87rem;
+  font-weight: normal;
+}
+
+h2 {
+  @include fontSize(30px);
+}
+
+.source {
+  font-style: oblique;
+  color: $color-middle-dark;
+  font-size: .8rem;
+}
+
+.attention {
+  font-style: oblique;
+  font-weight: normal;
+  @include fontSize(24px);
+}
+
+.featured-text {
+  margin: 2rem 0;
+  font-style: oblique;
+  @include fontSize(20px);
+}
+
+.featured-text-normal {
+  margin: 2rem 0;
+  @include fontSize(20px);
+}
+
+.featured-text-small {
+  margin: 1.15rem 0;
+  @include fontSize(18px);
+}
+
+.text-sm {
+  @include fontSize(12px);
+}
+
+.text-md {
+  @include fontSize(14px);
+}
+
+.text-large {
+  @include fontSize(30px);
+}
+
+//special heading styles
+h2.style02 {
+  font-size: 1.87rem;
+  color: $color-primary;
+}
+
+
+
+
+
+    
+
+

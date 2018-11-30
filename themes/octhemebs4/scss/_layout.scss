@@ -1,0 +1,81 @@
+ //You should be able to define most of the layout using bootstrap classes, however sometimes it's easier to `@extend` or `@include` bootstrap styles and/or mixins into whatever Drupal generates. You can do that here as well as add custom styles
+ 
+ .site-name {
+   @extend .sr-only;
+ }
+ 
+  //breadcrumb
+  
+  //header
+  header {
+    margin-bottom: 2rem;
+  }
+  .block-system-branding-block {
+    @media only screen and (max-width: 645px) and (min-width: 580px) {
+      @include remSize(width,280px); 
+    }
+  }
+    
+  
+  .branding-search-nav {
+    @include contentContainer;
+    display: flex;
+    flex-direction: column;
+    @include media-breakpoint-up(sm) {
+      flex-direction: row;     
+    }
+  }
+  
+  .search-nav {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    //justify-content: flex-end;
+    align-content: space-between;
+    @include contentPadding;
+    margin-top: 1rem;
+    position: relative;
+  }
+
+  
+  .main-nav-wrapper {
+    height: 100%;
+    position: relative;
+  }
+  
+  #block-mainmenutoggle,
+  .region-conditional-blocks .menu--main {
+    @include media-breakpoint-up(lg) {
+      display: none !important;
+    }
+    
+  }
+  
+.layout-container {
+  overflow-x: hidden;
+}
+  
+  .region-main-nav {
+    @include media-breakpoint-down(md) {
+     display: none !important;
+    }
+  }
+  
+  //highlighted
+  
+  //help
+  
+  //header_main_nav
+  
+  //header_secondary_nav
+  
+  //content
+  .main {
+    @include contentContainer;
+    padding: 0 1.5rem;
+    @include media-breakpoint-up(xl) {
+      padding: 0 0;
+    
+    }
+    
+  }

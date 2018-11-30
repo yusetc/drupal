@@ -1,0 +1,109 @@
+<?php
+
+use \Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements template_preprocess_page_title().
+ * hide page title on front page if front page is a node
+ */
+function octhemebs4_preprocess_page_title(&$variables, $hook) {
+  // Load the site name out of configuration.
+  $config = \Drupal::config('system.site');
+  $variables['site_name'] = $config->get('name');
+  $variables['site_slogan'] = $config->get('slogan');
+
+  try {
+    $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+  }
+  catch (Exception $e) {
+    $variables['is_front'] = FALSE;
+  }
+}
+
+
+/**
+ * Implements template_preprocess_html().
+ * Adds language and path to the body class
+ */
+function octhemebs4_preprocess_html(&$variables) {
+  $current_path = \Drupal::service('path.current')->getPath();
+  $variables['current_path'] = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
+  $variables['language'] = \Drupal::languageManager()->getCurrentLanguage()->getId();
+}
+
+
+
+
+/**
+ * make content type available as a body class
+ */
+function octhemebs4_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $content_type = $node->bundle();
+    $suggestions[] = 'page__'.$content_type;
+  }
+}
+
+
+/**
+ * Implements template_preprocess_search_result().
+ * adds language attribute to search result
+ */
+function octhemebs4_preprocess_search_result(&$variables){
+  $node = $variables["result"]["node"];
+  $langcode = $node->get("langcode")->value;
+
+  $variables["langcode"] = $langcode;
+}
+
+function octhemebs4_preprocess_field(&$variables){
+  $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
+  // Load the image entity from current route.
+  if (!empty($node = \Drupal::routeMatch()->getParameter('node')) && $node->getType() == 'media_release') {
+    //get date and location
+    $location = $node->get('field_place_of_publication')->getValue();
+
+    if (isset($location[0]["value"]) && !empty($location[0]["value"])){
+      $variables["media_location"] = $location[0]["value"];
+    }
+
+    $date = $node->getCreatedTime();
+
+    if ($current_language == "fr"){
+      $variables["media_date"] = "le " . \Drupal::service('date.formatter')->format($date, 'custom', 'F d, Y'); 
+    } else {
+      $variables["media_date"] = \Drupal::service('date.formatter')->format($date, 'custom', 'F d, Y'); 
+    }
+
+    $no_date = $node->get('field_do_not_display_date')->getValue();
+    $variables['media_show_date'] = !empty($no_date[0]['value']) ? 0: 1;
+  }
+
+}
+
+/**
+  * Implements hook_form_alter().
+  */
+function octhemebs4_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if($form_id == 'comment_cpg_form' || $form_id == 'comment_poem_form') {
+    if(isset($form['subject'])) {
+      $form['subject']['#attributes']['class'][] = 'form-group';
+    }
+
+    if(isset($form['comment_body'])) {
+      $form['comment_body']['#attributes']['class'][] = 'form-group';
+    }
+
+    $form['actions']['submit']['#attributes']['class'][] = 'button-primary-submit';
+
+    if(isset($form['actions']['preview'])) {
+      $form['actions']['preview']['#attributes']['class'][] = 'button-secondary-submit';
+    }
+
+    if(isset($form['field_show_author_data'])) {
+      $form['field_show_author_data']['#attributes']['class'][] = 'form-check form-group';
+    }
+  }
+}

@@ -1,0 +1,144 @@
+//used primarily in svg icons
+// it's a good idea, when writing svg code for icons to include 3 classes 
+//ie <g class="icon social-media twitter">...</g>
+// this way we can glogbally target all icons, all social media icons, and twitter specifically
+
+//facebook
+.fb-circle{
+  fill:none;
+  stroke:#3c5a99;
+  stroke-width:4px;
+}
+
+.fb-circle,
+.fb-f{
+  stroke-miterlimit:10;
+  }
+  
+.fb-f{
+  fill:#3c5a99;
+  stroke:#fff;
+  }
+  
+  
+//instagram
+.in-cl-1{
+  fill:#a43d96;
+}
+
+.in-cl-2{
+  fill:none;
+  stroke:#a43d96;
+  stroke-miterlimit:10;
+  stroke-width:5px;
+}
+  
+  
+//twitter 
+.tw-circle{
+  fill:none;
+  stroke:#429bd5;
+  stroke-width:4px;
+}
+
+.tw-circle,
+.tw-bird{
+  stroke-miterlimit:10;
+}
+
+.tw-bird{
+  fill:#429bd5;
+  stroke:#fff;
+}
+
+
+//YouTube
+.yt-circle{
+  fill:none;
+  stroke:#e42e29;
+  stroke-miterlimit:10;
+  stroke-width:4px;
+}
+              
+.yt-arrow{
+  fill:#e42e29;
+}
+
+//linked in 
+.li-circle{
+  fill:none;
+  stroke:#0078b5;
+  stroke-miterlimit:10;
+  stroke-width:4px;
+}
+                
+.li-logo{
+  fill:#0078b5;
+}
+
+//Progress Loader
+$progressDashArray: 339.292;
+
+
+.progressLoaderContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+  padding: 2rem;
+  
+  p {
+    font-weight: 500;
+    color: $color-primary;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    @include media-breakpoint-up(md) {
+      font-size: 2rem;
+    
+    }
+  }
+  
+}
+.progressLoader {
+  transform: rotate(-90deg);
+}
+
+.progressIndicator {
+   stroke-width: 8;
+   fill: none; 
+}
+
+.progressLoaded {
+  stroke-dasharray: $progressDashArray;
+  stroke-dashoffset: $progressDashArray;
+  animation: progressLoader 2s infinite;
+  stroke: $color-primary;
+}
+
+.progressLoading {
+  stroke: rgba($color-primary, .25);
+}
+
+
+@keyframes progressLoader {
+  from {
+    stroke-dashoffset: $progressDashArray;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+
+
+

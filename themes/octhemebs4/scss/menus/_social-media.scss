@@ -1,0 +1,32 @@
+//Social media links
+
+
+.social-sharing-menu {
+  @include contentPadding;
+  max-width: $content-max-width;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem auto 0;
+  margin-bottom: 2rem;
+  span {
+    @extend .sr-only;
+  }
+  
+  li {
+    padding: 0 .25rem;
+  }
+  
+  a {
+    display: block;
+    @include remSize(width, $thumb);
+    @include focus {
+        .icon { 
+          background-color: $color-extra-light;
+          border-radius: 20px;
+          @include transition-all;
+        }
+    }
+  }
+}

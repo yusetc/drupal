@@ -1,0 +1,38 @@
+// the views block on the front page that shows medial releases and some featured content on the right
+.block-views-blockoc-get-inspired-block-get-inspired-media-release {
+  h2 {
+    @include sr-only-reverse;
+    color: $color-primary;
+    text-align: center;
+    font-size: 3rem;
+  }
+  
+  margin-bottom: 3rem;
+  
+  a {
+      text-decoration: none;
+      @include focus {
+        text-decoration: underline;
+      }
+    }
+    
+> div {
+  > div {
+    @extend .row;
+   > .view-content {
+    @extend .col-md-8;
+    
+    
+  }
+  
+  > .view-footer {
+    @extend .col-md-4;
+    padding-left: 1.5rem;
+    h3 {
+      color: $color-primary;
+    }
+  }
+  }
+}
+  
+}

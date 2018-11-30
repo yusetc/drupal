@@ -1,0 +1,11 @@
+.profile {
+  .field__label {
+    font-weight: 500;
+  }
+  .field--name-field-user-profile {
+    margin-bottom: 1.15rem;
+    .field__item {
+      @extend .attention;
+    }
+  }
+}

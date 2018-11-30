@@ -1,0 +1,47 @@
+//utility menu 
+.menu--nav-utility {
+}
+
+.menu-nav-utility {
+  @extend .nav, .justify-content-end;
+}
+
+.nav-nav-utility--item {
+  @extend .nav-item;
+    a {
+      &:after {
+        padding-left: 1rem;
+        content: "|";
+      }
+    }
+  
+    .déconnexion--link,
+    .logout--link {
+      &:after {
+        padding-left: 0;
+        content: "";
+      }
+    }
+
+}
+
+.nav-link-nav-utility {
+  @extend .nav-link;
+  text-decoration: none;
+  color: white;
+  @include focus {
+    color: $color-secondary;
+  }
+  
+}
+
+.nav-link-nav-utility {
+  color: white;
+  text-decoration: none;
+  @include focus {
+    text-decoration: underline;
+    color: white;
+  }
+}
+
+

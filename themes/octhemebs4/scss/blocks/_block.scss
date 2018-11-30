@@ -1,0 +1,29 @@
+//general block styles
+// also used for styles where css is minimal on blocks, use a unique block card if your block has more than 25 lines of css
+
+.block-podcasts {
+  padding-top: .1rem;
+  h2 {
+    margin-bottom: 2rem;
+    color: $color-primary;
+    @include sr-only-reverse;
+  }
+}
+
+.block-leadership,
+.block-archive-cards {
+  h2 {
+    color: $color-primary;
+  }
+}
+
+.block-openid-connect {
+  a.form-submit {
+    @extend .nav-link-nav-utility;
+
+    &:before {
+      content: "|";
+      padding-right: 1rem;
+    }
+  }
+}

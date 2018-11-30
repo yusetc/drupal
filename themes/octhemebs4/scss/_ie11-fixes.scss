@@ -1,0 +1,16 @@
+//fixes for ie11
+//all ie11 fixes go inside the meedia query `@media all and (-ms-high-contrast:none)`
+
+@media all and (-ms-high-contrast:none)
+ {
+   //ie11 has terrible border radius rendering
+   * {
+     border-radius: 0 !important;
+   }
+  
+  //fix distorted images 
+  img {
+   min-height: 0.01px;
+  }
+
+ }

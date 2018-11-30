@@ -1,0 +1,32 @@
+//footer menu 
+
+//nav-footer--item 
+
+
+.menu-footer {
+  @extend .nav, .justify-content-center;
+  @include contentContainer;
+  margin-bottom: 2rem;
+}
+
+.nav-footer--item{
+  @extend .nav-item;
+    border-right: 1px solid $color-middle-dark;
+      &:last-child {
+      border-right: 0px;
+      }
+}
+
+.nav-link-footer {
+  @extend .nav-link;
+  text-decoration: none;
+  padding: 0 1rem;
+  color: $color-middle-dark;
+  @include focus {
+    color: $color-secondary;
+  }
+  &:focus {
+    color:white;
+  }
+  
+}

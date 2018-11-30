@@ -1,0 +1,828 @@
+//Clinical Resouces
+// These are added after the launch of joulecma.ca
+//they are kept separate for portability, eventually components should be incorporated into the rest of the site
+
+.cr-search-block {
+  background: $color-extra-light;
+  padding: 2rem 1rem 1rem;
+  margin-bottom: 1rem;
+  #search {
+    width: 100%;
+  }
+  
+    .cr-input-check {
+      padding-left: 2rem;
+    }
+    
+
+    
+    .search-options {
+      margin: 1.5rem 0;
+    }
+    table {
+    width: 100%;
+
+    }
+    
+    
+    td {
+      padding-right: 1rem;   
+      
+    }  
+  
+    
+    @include media-breakpoint-down(sm) {
+      
+          tr {
+      display: flex;
+      flex-wrap: wrap;
+    }
+      
+      td {
+        display: block;
+      }
+    .t-col-1,
+    .t-col-4 {
+      min-width: 100%;
+      }     
+    .t-col-1 {
+        > div {
+          @include remSize(max-width,100px);
+        }
+      }  
+        .t-col-2 {
+      flex-grow: 1;
+    }
+    
+    .t-col-3 {
+      width: 30%;
+      min-width: 100px;
+      
+    }
+    
+      
+    }   
+    .t-col-4 {
+      padding-right: 0;
+    }
+    
+
+    
+  }
+
+.cr-arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 9px solid black;
+}
+
+.cr-arrow-down {
+  width: 0; 
+  height: 0; 
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 9px solid black;
+  @include transition-all;
+  @include focus {
+    border-top-color: $color-primary;
+  }
+}
+
+.cr-table {
+  width: 100%;
+  font-size: 90%;
+  .cr-tcol-total {
+    min-width: 150px;
+  }
+  .cr-tcol-description {
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+// the search bar used on Quanum search
+.cr-search-bar {
+    display: flex;
+    flex-flow: row wrap;
+    //align-items: center;
+    justify-content: space-between;
+    > div {
+      margin-right: 1em;
+      &:first-child {
+        color: $color-secondary;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    div:nth-child(2) {
+      flex-grow: 1;
+    }
+    
+    div:nth-child(4) {
+      margin-right: 0;
+    }
+    
+    div:nth-child(5) {
+      text-align: right;
+    }
+    
+    @include media-breakpoint-up(md) {
+      div:nth-child(5) {
+      width: 100%;
+    }
+    
+    }
+    
+  @include media-breakpoint-down(sm) {
+    justify-content: center;
+    div:first-child {
+      text-align: center;
+      width: 100%;
+    }
+    div {
+      margin-right: 0;
+    }
+      text-align: center;
+   div:nth-child(2) {
+      width: 100%;
+      margin-top: .5rem;
+    }
+    
+    div:nth-child(3) {
+      margin-right: .5em;
+      margin-top: .5rem;
+    }
+    
+    div:nth-child(4) {
+      margin: .5rem .5em 0;
+    }
+    
+    div:nth-child(5) {
+      margin-left: .5em;
+      margin-top: .5rem;
+      flex-grow: 1;
+    }
+    
+    }
+  
+}
+  
+  .cr-sidebar-right-content {
+      background: $color-extra-light;
+      padding: 1rem 1rem 2rem;
+      margin-top: 1.25rem;
+      font-size: 80%;
+  }
+  
+  .cr-sidebar-left {
+    font-size: 80%;
+    padding: 0;
+    margin-bottom: 1.5rem;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 0;
+    
+    }
+    h2.cr-expand-filters a {
+      display: block;
+      background-color: $color-middle-dark;
+      color: white;
+      font-size: 1.15rem !important;
+      text-align: center;
+      padding: 1rem;
+      text-decoration: none;
+      @include focus {
+        background-color: darken($color-middle-dark, 10%);
+        @include media-breakpoint-up(md) {
+          background-color: $color-middle-dark;
+          cursor: default;
+        }
+      }
+  
+      }
+    h2 {
+      margin-bottom: 0 !important;
+    }
+      
+      input[type="checkbox"] {
+        margin-left: 0;
+      }
+      label {
+        margin-left: 1.2rem;
+      }
+      
+      .featured-text-normal {
+        margin-bottom: 0;
+        margin-top: .5rem;
+        font-size: 1.25em !important;
+      }
+    
+    .cr-sidebar-left-filters {
+      background: $color-extra-light;
+      padding: 1rem 1rem 2rem;
+        > div {
+          margin-bottom: 1.25rem;
+        }
+      
+    }
+    @include media-breakpoint-up(md) {
+      .collapse:not(.show) {
+        display: block;
+      }
+    
+    }
+  }
+  
+ .cr-help-area {
+   display: flex;
+   justify-content: flex-end;
+   }
+ 
+ .cr-month {
+   @include media-breakpoint-up(sm) {
+   padding: 0;
+   }
+   
+ }
+ 
+ #members-only {
+   color: maroon;
+   margin: 1rem 0;
+ }
+ 
+ .cr-sort-row {
+   > div {
+     margin-top: .5rem;
+     
+     &:first-child {
+       margin-right: 1rem;
+     }
+   }
+  @include media-breakpoint-up(md) {
+    width: 50%;
+    justify-content: space-between;
+    
+    select {
+      width: 12rem;
+    }
+  
+  }
+  
+  @include media-breakpoint-down(md) {
+    flex-wrap: wrap;
+    > div {
+      width: 100%;
+    }
+  
+  }
+  
+  select {
+      display: inline-block;
+      margin-left: .75rem;
+    }
+ }
+ 
+ 
+ .cr-fancy-list {
+   @include headings {
+     color: white;
+     background: $color-primary;
+     font-size: 1.25rem !important;
+     font-weight: 500;
+     padding: .5rem;
+     margin-bottom: 1rem;
+   }
+   
+   ul,ol {
+     padding: 1rem;
+     @include headings {
+       margin-right: -1em;
+       margin-left: -1em;
+     }
+     }
+   
+   li {
+     margin-bottom: 1rem;
+   }
+ }
+ 
+ .cr-result-column {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+ }
+ 
+ .cr-result-column-content {
+   
+ }
+ 
+.cr-result-column-bottom {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid $color-light;
+}
+ 
+ 
+ .clinical-resource-divider {
+   //no longer used. here for legacy reasons
+   margin: 1.25rem 0 .85rem;
+   padding-bottom: .5rem;
+   border-bottom: 3px dotted $color-middle;
+ }
+ 
+ // a section of content in the sidebar
+ .cr-sidebar-right-section {
+   margin: 0 0 .85rem;
+   padding-bottom: .5rem;
+   border-bottom: 3px dotted $color-middle;
+ }
+ 
+ //an item within the sidebar
+ .cr-sidebar-item {
+   margin-bottom: 1rem;
+   
+ }
+
+ .cr-block-header {
+   @extend .featured-text-normal;
+   margin: 0;
+ }
+
+.cr-search-summary {
+    display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  justify-content: space-between;
+  
+  ul {
+   display: flex;
+   flex-wrap: wrap;
+   list-style: none;
+   margin-top: .5rem;
+   li {
+     margin-left: 2.15rem;
+   }
+  }
+  .form-check-input, 
+  input[type="checkbox"], 
+  input[type="radio"] {
+
+  }
+  
+  
+}
+
+.cr-search-results {
+  .media {
+    margin-bottom: 2rem;
+  }
+  
+  .produced-by {
+    font-weight: 500;
+  }
+  .media-body {
+    h5 {
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+.cr-list-columns {
+  list-style: none;
+  @include media-breakpoint-up(md) {
+    columns: 3 200px;
+    column-fill: auto;
+  }
+  
+}
+
+.cr-search-for {
+  color: $color-primary;
+}
+
+.cr-testimonials {
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid $color-secondary;
+  border-top: 1px solid $color-secondary;
+  color: $color-secondary;
+}
+
+.cr-quote {
+  display: block;
+  margin-top: 1em;
+  padding-bottom: 1em;
+  font-weight: 500;
+  font-style: oblique;
+  font-size: .87rem;
+  &:before,
+  &:after {
+    display: inline-block;
+    content: '"';
+  }
+  &:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+//used for single result
+.cr-search-result {
+  margin-bottom: 2rem;
+  h2 {
+    font-size: 1.5rem !important;
+    font-weight: 500;
+    margin-bottom: .5rem;
+  }
+  
+  > div {
+    margin-bottom: .5rem;
+  }
+  
+}
+
+.cr-quantum-search-notice {
+  @extend .text-sm;
+  margin-bottom: 1rem;
+  margin-top: -1rem;
+}
+.cr-details-record {
+  table {
+    width: 100%;
+    margin-bottom: 2rem;
+    @extend .border-dotted-b;
+    tr:last-child {
+      td {
+        padding-bottom: 1rem;
+      }
+    }
+
+  }
+  td {
+      padding: 0 .5rem;
+      &:nth-child(odd) {
+        font-weight: 500;
+        width: 25%;
+      }
+    }
+    
+  td[colspan="2"] {
+    font-weight: normal;
+  }
+  .cr-record-id {
+    color: white;
+    background-color: $color-primary;
+  }
+  
+  .cr-record-top-row {
+     height: 3rem;
+    vertical-align: bottom;
+  }
+  
+  .cr-details-actions {
+    text-align: right;
+    padding-bottom: 1rem;
+  }
+  
+  section {
+    margin-top: 1.25rem;
+    &:first-child {
+      margin-top: 0;
+    }
+    > div {
+      margin-bottom: .75rem;
+    }
+  }
+}  
+
+.cr-tools {
+  text-align: right;
+  margin: 0 0 1rem 0;
+
+  a {
+    display: inline-block;
+    padding-bottom: .6rem;
+    @include focus {
+      background-color: transparent !important;
+      color: darken($color-font-inline-link, 10%);
+      .icon {
+        fill: darken($color-font-inline-link, 10%);
+      }
+    }
+  }
+  
+  .cr-tools-icon {
+    display: inline-block;
+    width: 1rem;
+    margin-right: 1rem; 
+  }
+  
+  .cr-tools-icon-wide {
+    display: inline-block;
+    width: 1.5rem;
+    margin-right: 1rem; 
+    
+  }
+}
+
+.cr-clipboard {
+  section {
+    margin-top: 3rem;
+    border-bottom: 1px solid $color-light;
+    padding-bottom: 1rem;
+    &:first-child {
+      margin-top: 0;
+    }
+    > div {
+      margin-bottom: .75rem;
+    }
+    
+    
+  }
+  
+}
+//svg icons 
+ 
+.cr-help-icon {
+  width: 33.33%;
+  max-width: 60px;
+  .cls-1 {
+    fill:none;
+    stroke:$color-primary;
+    stroke-miterlimit:10;
+    stroke-width:2px;
+  }
+   
+  .cls-2 {
+    font-size:45.59px;
+    fill:$color-primary;
+    font-family:Ubuntu-Light, Ubuntu;
+  }
+     
+ }
+
+.cr-close {
+  &:after {
+    color: red;
+    content: " [x]";
+  }
+}
+
+.cr-month-head {
+  background-color: $color-extra-light;
+  border-bottom: 1px solid $color-light;
+  th {
+  padding: .5rem;
+  }
+  a.cr-toggle {
+    display: block;
+    position: relative;
+    height: 1em;
+    width: 100%;
+    min-width: 50px;
+    
+    @include focus {
+      background: transparent;
+    }
+  
+    
+    .cr-toggle-icon {
+      position: absolute;
+      
+      right: .5rem;
+      top: .5rem;
+      //@extend .cr-arrow-up
+      
+    }
+
+  }
+  
+
+}
+.cr-toggle:not(.collapsed) .cr-toggle-icon {@extend .cr-arrow-up;}
+.cr-toggle.collapsed .cr-toggle-icon {@extend .cr-arrow-down;}
+
+
+.icon.speech-bubble,
+.icon.clipboard,
+.icon.trash,
+.icon.printer
+ {
+  fill: $color-font-inline-link;
+}
+
+.icon.toggle-arrow {
+  fill: none;
+              stroke: #00b500;
+              stroke-miterlimit: 10;
+}
+.cr-info-icon {
+    display: inline-block;
+    width: 2rem;
+    height: auto;
+  .cls-1 {
+    fill:none;
+    stroke: white;
+    stroke-miterlimit:10;
+    stroke-width:2px;
+  }
+   
+  .cls-2 {
+    font-size:45.59px;
+    fill: white;
+    font-family:Ubuntu-Light, Ubuntu;
+  }
+     
+ }
+
+.icon-example {
+  border-radius: 50%;
+  display: inline-block;
+  color: white;
+  background: $color-secondary;
+  width: 1.5rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.cr-client-note {
+  margin: 2rem;
+  padding: 2rem;
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: maroon;
+  border: 2px solid maroon;
+}
+
+.cr-dynamed {
+  border-top: 1px solid $color-secondary;
+  border-bottom: 1px solid $color-secondary;
+  min-height: 125px;
+  position: relative;
+  padding: 1rem 1rem 30px;
+  margin-bottom: 40px;
+  background: linear-gradient(to bottom, rgba(214,242,255,1) 0%, rgba(247,250,252,1) 66%, rgba(247,250,252,1) 100%);
+  > div:first-child {
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .cr-dynamed-logo {
+    img {
+      background: #ffffff;
+      display: inline-block;
+      border-radius: .4rem;
+      border: 1px solid $color-secondary;
+      padding: 10px;
+    }
+    height: 50px;
+    position: absolute;
+    bottom: -25px;
+  }
+}
+
+.required {
+  display: flex;
+&::after {
+  color: red;
+  width: 1em;
+  text-align: right;
+  content: "*";
+  display: inline-block;
+}
+}
+
+
+/*
+.cr-author-block-right
+cr-author-block-images
+cr-author-block-text
+*/
+
+.cr-author-block {
+  padding: 1rem;
+  border: 1px solid $color-light;
+  border-radius: .3rem;
+  @extend .text-sm;
+  &-right {
+    @extend .cr-author-block;
+    @include media-breakpoint-up(md) {
+      float: right;
+      margin: 0 0 1rem 1rem;
+      @include remSize(max-width,300px);
+    
+    }
+  }
+  &-left {
+    @extend .cr-author-block;
+    @include media-breakpoint-up(md) {
+      float: left;
+      margin: 0 1rem 1rem 0;
+      @include remSize(max-width,300px);
+    
+    }
+  }
+  
+}
+
+.cr-author-block-images {
+  display: flex;
+  justify-content: space-between;
+  img {
+    display: block;
+    padding: .5rem;
+  }
+}
+
+.cr-author-block-text {
+  p {
+    margin-bottom: .5rem;
+  }
+  ul,ol {
+    padding: 0 0 0 1rem;
+  }
+}
+
+//modal for filtered search
+$icon-close: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18.01 18.01'%3E%3Ctitle%3Eicon-close%3C/title%3E%3Cpath d='M10.42,9l7.3-7.29A1,1,0,0,0,16.3.29h0L9,7.59,1.72.29A1,1,0,0,0,.3.29a1,1,0,0,0,0,1.42L7.6,9,.3,16.29a1,1,0,0,0,0,1.42h0a1,1,0,0,0,1.41,0h0L9,10.41l7.29,7.3a1,1,0,0,0,1.41,0h0a1,1,0,0,0,0-1.41h0Z'/%3E%3C/svg%3E");
+
+.cr-modal-block {
+  border-radius: .3rem;
+  background: white;
+  max-width: 900px;
+  margin: 10vh 2rem;
+  @include media-breakpoint-up(lg) {
+    margin: 10vh auto;
+  } 
+}
+
+.cr-modal-form-header {
+  border-bottom: 1px solid $color-middle;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  h1 {
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+}
+
+.cr-modal-actions {
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid $color-middle;
+  @include media-breakpoint-up(md) {
+    text-align: right;  
+  }
+}
+
+.cr-modal-content {
+  padding: 1rem 2rem;
+}
+
+
+.cr-modal-options {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 1rem 1.15rem 0;
+}
+
+
+
+.cr-button-close {
+    stroke: $color-font-inline-link;
+    outline: 0;
+    border: 0;
+  &:after {
+    background-image: $icon-close;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    content: "";
+  }
+}
+
+//overrides
+
+.anticon {
+  font-size: 1.4rem;
+  color: $color-secondary;
+}  
+
+.ant-checkbox {
+  margin-left: 1.5rem;
+}  
+
+
+.filter-criteria-wrapper {
+  > td {
+    padding-bottom: .5rem !important;
+  }
+}     

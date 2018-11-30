@@ -1,0 +1,29 @@
+// This file is used for development and testing.
+// it should not be included in the production theme
+
+//####  THIS FILE IS PERIODICALLY DELETED - MOVE any code you want to keep to the appropriate sheet
+/*
+.navbar {
+  &:before {
+    display: block;
+    content: "";
+  }
+}
+*/
+
+.dev-yellow{
+  @include dev(yellow);
+}
+
+.dev-green {
+  @include dev(green);
+}
+
+.dev-blue {
+  @include dev(blue);
+}
+
+
+
+
+

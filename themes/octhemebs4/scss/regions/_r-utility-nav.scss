@@ -1,0 +1,9 @@
+// utility-nav
+.utility-nav-wrapper {
+  background: $color-dark; 
+}
+.region-utility-nav {
+  @include contentContainer; 
+  display: flex;
+  justify-content: flex-end;  
+}

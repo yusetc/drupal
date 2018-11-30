@@ -1,0 +1,153 @@
+
+.quantom-search-block {
+  padding: 0 1.5rem;
+  margin-bottom: 0.5rem;
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 1rem;
+  }
+
+  @extend .clearfix;
+
+  .qsearch-widget-form {
+    @include media-breakpoint-up(lg) {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  .qsearch-title {
+    display: block;
+    text-align: center;
+    color: $color-secondary;
+    margin-bottom: 0.5rem;
+
+    @include media-breakpoint-up(lg) {
+      flex: none;
+      margin-top: 0.5rem;
+      text-align: left;
+      margin-right: 1rem;
+      margin-bottom: 0;
+    }
+  }
+
+  .form-item-query-term {
+    .description {
+      margin-top: 0.5rem;
+      text-align: center;
+      a {
+        font-weight: bold;
+        color: white;
+        &:before {
+          background-color: transparent !important;
+        }
+        &:hover {
+          background-color: transparent;
+          text-decoration: underline !important;
+        }
+        &:focus  {
+          text-decoration: underline !important;
+        }
+        padding: 0;
+        @include fontSize(14px);
+
+        @include media-breakpoint-up(lg) {
+          display: inline-block;
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        margin-right: 1rem;
+        text-align: left;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-right: 1rem;
+    }
+  }
+
+  .form-actions {
+    text-align: center;
+    margin-top: 0.5rem;
+
+    @include media-breakpoint-up(lg) {
+      margin-top: 0;
+      text-align: left;
+    }
+
+    .form-submit {
+      @extend .button-primary-submit;
+      margin-top: 0.3rem;
+    }
+  }
+}
+
+.menu--clinical-resources {
+  @extend .container-fluid;
+
+  .menu-column {
+    border-top: 1px solid $color-secondary;
+    padding: 1rem !important;
+    text-align: center;
+    
+    @include media-breakpoint-up(lg) {
+      border-top: 0;
+      padding: 0 1rem 0 0 !important;
+      text-align: left;
+      
+      &:last-child {
+        padding-right: 0 !important;
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  a {
+    color: white !important;
+    text-decoration: none;
+    height: 100%;
+    text-align: center;
+    padding: 0 0.5rem !important;
+
+    @include media-breakpoint-up(lg) {
+      text-align: left;
+    }
+    &:before {
+      background-color: transparent !important;
+    }
+    &:hover {
+      background-color: transparent;
+      text-decoration: underline !important;
+    }
+    &:focus  {
+      text-decoration: underline !important;
+    }
+    padding: 0;
+    @include fontSize(16px);
+  }
+
+  .menu-clinical-resources-row {
+    border-top: 1px solid $color-secondary;
+    padding: 1rem 0;
+    
+    @include media-breakpoint-down(md) {
+      &:first-child {
+        border-top: 0;
+        padding: 1rem 0 0;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+       &.menu-columns {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+  }
+}

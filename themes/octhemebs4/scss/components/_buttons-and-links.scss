@@ -1,0 +1,113 @@
+//button
+
+.button-primary {
+  display: inline-block;
+  margin: 0 auto;
+  @include fontSize(25px);
+  @include remSize(padding-top, 10px);
+  @include remSize(padding-right, 25px);
+  @include remSize(padding-bottom, 10px);
+  @include remSize(padding-left, 25px);
+  background: $color-primary;
+  border-radius: .3rem;
+  color: white;
+  text-decoration: none;
+  @include focus {
+    background-color: darken($color-primary, 10%);
+    //background-color: black;
+    text-decoration: none;
+    @include transition-button;
+    color: white;
+    
+  }
+  
+}
+.button-primary-submit {
+  @extend .button-primary;
+  padding: .25rem 1.5rem;
+  @include fontSize(16px);
+  
+}
+
+.button-secondary-submit {
+  @extend .button-primary-submit;
+  background: $color-secondary;
+  @include focus {
+    background-color: darken($color-secondary, 10%);    
+  }
+}
+
+.button-secondary {
+  @extend .button-primary;
+  background: #113465;
+  @include focus {
+    background-color: darken(#113465, 10%);
+  }
+}
+
+.button-outline {
+  display: inline-block;
+  margin: 0 auto;
+  @include fontSize(25px);
+  @include remSize(padding-top, 10px);
+  @include remSize(padding-right, 25px);
+  @include remSize(padding-bottom, 10px);
+  @include remSize(padding-left, 25px);
+  background: transparent;
+  text-decoration: none;
+  border-radius: .3rem;
+  border: 1px solid;
+  margin: 1.2rem;
+  &-white {
+    @extend .button-outline;
+    border-color: white;
+    color: white;
+    @include focus {
+      background: $color-shadow;
+    } 
+  }
+  &-black {
+    @extend .button-outline;
+    border-color: black;
+    color: black;
+    @include focus {
+      background: $color-shadow;
+    }
+  
+  }
+}
+
+.simple-links a {  
+  font-weight: .9rem;
+  color: $color-font-primary;
+  text-decoration: none;
+  @include focus {
+    text-decoration: underline;
+  }
+}
+
+//the login link
+#block-ssologin,
+.block-ssologin,
+.openid-connect-login-form {
+  //border-left: 1px solid white;
+}
+#edit-openid-connect-client-generic-login,
+.button-link {
+  color: white;
+  background: $color-dark;
+  @extend .nav-link;
+  border: 0;
+  padding-left: 0;
+  @include focus {
+    text-decoration: underline;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+  }
+  
+}
+
+
+
+

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="octhemebs4startertheme">octhemebs4 starter theme</h1>
+
+<p>This theme is a starter to be used with bootstrap 4.x</p>
+
+<p>It uses classy as a base theme, however classy CSS is removed. This allows us to focus on bootstrap and custom css without worrying about overriding classy css while maintaining classy selectors applied by classy vis twig templates.</p>
+
+<hr />
+
+<h1 id="importantnotes:"><strong>IMPORTANT NOTES:</strong></h1>
+
+<ol>
+<li><code>/scss/bootstrap-x.x</code> is not tracked by git. You need to add the folder manually to ensure the latest version</li>
+<li>SASS will not compile until you complete the setup steps</li>
+<li>Depending on the environment you are using, you may need to remove the <code>.git</code> directory and associated .git files because some development environments don&#8217;t work well with nested git repos. (for example, pantheon)</li>
+</ol>
+
+<hr />
+
+<h2 id="tosetup">To setup</h2>
+
+<ol>
+<li><p>Go to the bootstrap website and <a href="https://getbootstrap.com/docs/4.1/getting-started/download/">download the source files</a></p></li>
+<li><p>From the directory you downloaded, copy the scss directory to octhemebs4/scss/ and rename it to <code>bootstrap-4.x.x</code> where x.x ix the current version number</p></li>
+<li><p>open <code>octhemebs4/scss/style.scss</code><br />
+a. find where it says <code>@import &quot;bootstrap-4.x.x/bootstrap&quot;,</code>
+b. rename the bootstrap directory to whatever you created in step 2
+c. uncomment this line</p></li>
+<li><p>save <code>style.scss</code></p></li>
+</ol>
+
+<hr />
+
+<h2 id="javascriptfiles">JavaScript files</h2>
+
+<p>We are using a CDN for bootstrap JS, the reference can be found in the libraries file</p>
+
+<hr />
+
+<h2 id="thesassfiles">The SASS files</h2>
+
+<h3 id="globalstyles">Global styles</h3>
+
+<ol>
+<li><p>bootstrap-4.x.x/bootstrap<br />
+This is all the bootstrap files you set up above. By importing bootstrap sass, we are able to use bootstrap&#8217;s variables and mixins</p></li>
+<li><p>_variables.scss<br />
+Variables are things values used repeatedly throughout the site.</p></li>
+<li><p>_mixins.scss
+mixins are for reusable code, some of them accept parameters see <a href="http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code">Leveraging Sass mixins for cleaner code</a></p></li>
+<li><p>_typography.scss
+typography is for setting up the appearance of type. Fonts themselves and the css required to access them should be kept in the <code>fonts</code> directory and referenced from <code>_typography.scss</code></p></li>
+<li><p>_html.scss<br />
+set up some default styles for html elements.</p></li>
+<li><p>_layout.scss
+Defines the overall site layout. This is for positioning only.</p></li>
+<li><p>_helpers.scss<br />
+Helpers have nothing to do with Drupal&#8217;s help region. Helpers are styles that are applied generally across the site to make other things work correctly</p></li>
+<li><p>_accessibility.scss<br />
+Generally, we should be making all our selectors accessible. However, sometimes there are cases where something is done explicitly for accessibility purposes (ie changing contrast). These selectors are defined here</p></li>
+</ol>
+
+<h3 id="componentstyles">Component styles</h3>
+
+<p>Components set specific appearance of things used across the site. The idea is that we can re-use selectors and/or styles. This is in compliance with <a href="http://bradfrost.com/blog/post/atomic-web-design/">Atomic design</a>. Things such as carousels, alerts, jumbotron etc go in components</p>
+
+<p>A component style can include other components/ For example, an icon gets defined. A button uses the icon. we have</p>
+
+<pre><code>.icon {font-size: 1.87rem;}
+.button {padding: 1rem 2rem;}
+
+</code></pre>
+
+<p>Then we set the html as <code>&lt;a class=&quot;icon button&quot; href=&quot;#&quot;&gt;button&lt;/a&gt;</code> OR we can make a specific class such as:</p>
+
+<pre><code>.myNewButton {
+  @extend icon;
+  @extend button;
+  }
+</code></pre>
+
+<ol>
+<li><p>components/_icons.scss<br />
+define icon styles. Often, this will be styles for SVG</p></li>
+<li><p>components/_buttons-and-links.scss</p></li>
+<li><p>components/_decorations.scss
+used for things that serve no purpose other than to decorate the site. They can be used with other site elements</p></li>
+<li><p>components/_colors.scss<br />
+Color values should be defined in <code>scss/_variables.scss</code>
+<code>scss/_color.scss</code> is used setting up selectors related to color, For example, if you need a selector that applies a specific foreground and background would look like:</p>
+
+<pre><code>.highlighted {
+  color: \(color-primary; \)color-primary is defined in scss/_variables.scss
+  background: $color-secondary;
+  } 
+      
+
+</code></pre>
+
+<ul>
+<li> $color-primary is defined in scss/_variables.scss</li>
+<li> $color-secondary is defined in scss/_variables.scss</li>
+</ul></li>
+</ol>
+
+<h3 id="cardstyles">Card styles</h3>
+
+<p>Cards are regions of a page. <a href="https://getbootstrap.com/docs/4.0/components/card/">Bootstrap has several build in styles for cards</a>. If you need to theme a card beyond what bootstrap has o offer, put it here</p>
+
+<h3 id="menus">Menus</h3>
+
+<p>Menu styles go here.</p>
+
+<h3 id="blocks">Blocks</h3>
+
+<p>Block styles go here. NOTE: in most cases, we should be using components and cards to build block content while the block itself has no style.</p>
+
+<h3 id="regions">Regions</h3>
+
+<p>Region styles apply to the container. Element within the region should be styled withing the appropriate sheet (ie. <code>_menu-main-navigation.scss</code>)</p>
+
+<ol>
+<li>regions/_header.scss</li>
+<li>regions/_main-nav.scss</li>
+<li>regions/_secondary-nav.scss</li>
+<li>regions/_footer.scss</li>
+<li>regions/_content.scss</li>
+<li>regions/_breadcrumb.scss</li>
+<li>regions/_highlighted.scss</li>
+<li>regions/_help.scss</li>
+</ol>
+
+<h3 id="nodes">nodes</h3>
+
+<p>If required, node specific styles go in <code>/scss/nodes/...</code></p>
+
+<h3 id="forms">Forms</h3>
+
+<p>all form styles go in here. Note that basic form elements (without selectors) are defined in <code>/scss/_html.scss</code></p>
+
+<ol>
+<li>forms/_search.scss</li>
+<li>forms/user-login-form.scss</li>
+</ol>
+
+<h3 id="views">views</h3>
+
+<p>put styles specific to a view here. Note that ideally, the appearance of views uses styles relevant to the content being displayed (ie. a component or a card) and not the view itself. Sometimes styling a view is necessary, so it goes here.</p>
+
+<h3 id="customdisplaymodes">custom display modes</h3>
+
+<p>The layout of a display mode should be defined in the display modes css. Customizations to the site theme can go here. Layout is done in the view mode module so that when rendered using a different theme (ie an admin theme) the view mode still displays content roughly as it should.</p>
+
+<h3 id="special">special</h3>
+
+<p>Special is used in circumstances where the design is unique from other site elements. A typical example would be the front page</p>
+
+<h3 id="overrides">overrides</h3>
+
+<ol>
+<li><p>_overrides.scss<br />
+Use overrides to overide styles from drupal (including classy), bootstrap and contributed modules</p></li>
+<li><p>_ie11-fixes.scss
+Place ie11 specific styles inside the media query</p></li>
+<li><p>_ms-edge-fixes.scss<br />
+Place MS edge overrides inside the query</p></li>
+</ol>
+
+<h3 id="development">development</h3>
+
+<ol>
+<li>_development.scss<br />
+Use this file for experimenting. Once a style does what you want it to, move the selector to the appropriate sheet. _devemopment.scss is periodically emptied out and should not be used for production</li>
+</ol>
+
+<hr />
+
+</body>
+</html>
+

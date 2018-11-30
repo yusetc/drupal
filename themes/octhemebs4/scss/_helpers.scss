@@ -1,0 +1,318 @@
+
+// helpers are styles that are applied generally across the site to make other things work correctly
+
+
+//bust an element out of it's container 
+.bust-out {
+  @include media-breakpoint-up(lg) {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;  
+  }
+}
+
+//sizes
+.width {
+  @include media-breakpoint-up(md) {   
+    margin: 0 auto;
+    display: inline-block;
+  } 
+    &-quarter {
+      width: 25%;
+      @extend .width;
+    }
+    
+    &-third {
+      width: 33.3333%;
+      @extend .width;
+    }
+    
+    &-half {
+      width: 50%;
+      @extend .width;
+    }
+    
+    &-three-quarter {
+      width: 75%;
+      @extend .width;
+    }
+}
+
+.content-width {
+  max-width: $content-max-width;
+  margin: 0 auto;
+}
+
+
+//the classes below can be added in the html of a ckeditor to do various things. 
+//the intent is to speed up migrating the wierd content
+
+.clr-white {color:white;}
+.clr-pink {color: $color-primary  !important;}
+.clr-blue {color: $color-secondary  !important;}
+.clr-light-grey {color: $color-light !important;}
+.clr-middle-grey {color: $color-middle !important;}
+.bk-grey {background: #939598  !important;}
+.bk-light-grey {background: $color-extra-light !important;}
+.bk-pink {background: $color-primary !important;}
+.bk-blue {background: $color-secondary !important;}
+.bk-black {background: black !important;}
+
+.clr-white-focus {
+  @include focus {color:white !important;}
+  }
+  
+.clr-pink-focus {
+  @include focus {color: $color-primary !important;}
+  }
+  
+.clr-blue-focus {
+  @include focus {color: $color-secondary !important;}
+  }
+  
+.clr-black-focus {
+  @include focus {color: black !important;}
+  }
+  
+.bk-grey-focus {
+  @include focus {background: #939598 !important;}
+  }
+
+  
+  
+.bk-light-grey-focus {
+  @include focus {background: $color-extra-light;}
+  }
+  
+.bk-pink-focus {
+  @include focus {background: $color-primary;}
+  }
+  
+.bk-blue-focus {
+  @include focus {background: $color-secondary;}
+  }
+.bk-black-focus {
+  @include focus {  background: black;}
+  }
+
+
+.split-2 {
+  @extend .row;
+  > div {
+    @extend .col-md-6;
+  }
+}
+
+.split-2-bdr {
+  @extend .row;
+  > div {
+    @extend .col-md-6;
+    &:first-child {
+    border-bottom: 3px dotted $color-middle;
+    @include media-breakpoint-up(md) {
+      border-bottom: 0;
+      &:nth-child(odd){
+      border-right: 3px dotted $color-middle;
+      }
+    }
+  }
+  }
+  
+}
+
+.split-3 {
+  @extend .row;
+  > div {
+    @extend .col-md-4;
+  }
+}
+
+.split-3-bdr {
+  @extend .row;
+  > div {
+    @extend .col-md-4;
+    border-bottom: 3px dotted $color-middle;
+    @include media-breakpoint-up(md) {
+      border-bottom: 0;
+      border-right: 3px dotted $color-middle;
+      &:nth-child(3) {
+        border-right: 0;
+      }
+    } 
+  }  
+}
+
+.split-4 {
+  @extend .row;
+  > div {
+    @extend .col-md-6;
+    @extend .col-lg-3;
+  }
+}
+
+.split-4-bdr {
+  @extend .row;
+  > div {
+    @extend .col-md-6;
+    @extend .col-lg-3;
+    border-bottom: 3px dotted $color-middle;
+    @include media-breakpoint-up(md) {
+      border-bottom: 0;
+      border-right: 3px dotted $color-middle;
+      &:nth-child(2) {
+        border-right: 0;
+      }
+    } 
+    @include media-breakpoint-up(lg) {
+      border-bottom: 0;
+      border-right: 3px dotted $color-middle;
+    &:nth-child(2) {
+        border-right: 3px dotted $color-middle;;
+      }
+      
+      &:nth-child(4) {
+        border-right: 0;
+      }
+    } 
+  }  
+}
+
+
+.full-width {
+  @extend .bust-out;
+  @include wrapElements;
+
+}
+
+.bk-img {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  
+  //right
+  &-r {
+    @extend .bk-img;
+    background-position: right center;
+  }
+  //left
+  &-l {
+    @extend .bk-img;
+    background-position: left center;
+  }
+  
+  //bottom left
+  &-bl {
+    @extend .bk-img;
+    background-position:left bottom;
+  }
+  
+  //bottom right
+  &-br {
+    @extend .bk-img;
+    background-position:right bottom;
+  }
+  
+ //top right
+  &-tr {
+    @extend .bk-img;
+    background-position:right top;
+  }
+  
+ //top left
+  &-tr {
+    @extend .bk-img;
+    background-position:left top;
+  }
+  
+  &-contain {
+    @extend .bk-img;
+    background-size: contain !important;   
+  }
+}
+
+.clear-all {
+  @include clearAll;
+
+}
+
+// set up some min widths
+.mnw-100 {
+  @include remSize(min-width,100px);
+}
+
+.mnw-125 {
+  @include remSize(min-width,125px);
+}
+
+.mnw-150 {
+  @include remSize(min-width,150px);
+}
+
+.mnw-175 {
+  @include remSize(min-width,175px);
+}
+
+.mnw-200 {
+  @include remSize(min-width,200px);
+}
+
+.mnw-225 {
+  @include remSize(min-width,225px);
+}
+
+.mnw-250 {
+  @include remSize(min-width,250px);
+}
+
+// set up some max widths
+.mxw-100 {
+  @include remSize(max-width,100px);
+}
+
+.mxw-125 {
+  @include remSize(max-width,125px);
+}
+
+.mxw-150 {
+  @include remSize(max-width,150px);
+}
+
+.mxw-175 {
+  @include remSize(max-width,175px);
+}
+
+.mxw-200 {
+  @include remSize(max-width,200px);
+}
+
+.mxw-225 {
+  @include remSize(max-width,225px);
+}
+
+.mxw-250 {
+  @include remSize(max-width,250px);
+}
+
+//display
+.inline {
+  display: inline;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+//position
+.center-block {
+  margin: 0 auto;
+}
+
+//lists
+.no-bullets {
+  list-style: none;
+  padding: 0;
+}
+

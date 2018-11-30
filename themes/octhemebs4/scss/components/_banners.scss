@@ -1,0 +1,92 @@
+
+.oc-carousel {
+  position: relative;
+  text-align: center;
+  color: white;
+  background: $color-primary;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  overflow: visible;
+  @include remSize(min-height,300px); 
+  @include media-breakpoint-up(md) {
+    @include remSize(height,400px);  
+  }
+  @include media-breakpoint-up(xl) {
+    @include remSize(height,450px); 
+  }
+
+}
+
+.oc-carousel-content {
+  @include remSize(font-size, 16px);
+  @include remSize(line-height, 16px);
+  max-width: $content-max-width;
+  @include contentPadding;
+  padding: 1rem;
+  margin: 0 auto;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.33);
+  .primary-text {
+     margin: 0 3rem;
+      @include remSize(font-size, 30px);
+      @include remSize(line-height, 30px);
+    
+      @include media-breakpoint-up(md) {
+        @include remSize(font-size, 40px);
+        @include remSize(line-height, 40px);
+      }
+      @include media-breakpoint-up(lg) {
+        @include remSize(font-size, 50px);
+        @include remSize(line-height, 50px);
+      }
+   }
+  img {
+    margin: 1.33rem;
+    display: inline-block;
+    max-width: 6rem !important;
+    
+    @include media-breakpoint-up(md) {
+      max-width: 10rem !important;
+    }
+    
+    @include media-breakpoint-up(md) {
+      max-width: 15rem !important;
+    }
+  }
+  .field--name-field-carousel-banner-text {
+    margin: 0 3rem;
+    
+  }
+  .field--name-field-single-link {
+    margin-top: 1rem;
+    a {
+      color: white;
+      text-decoration: none;
+      @extend .button-outline;
+      @include remSize(font-size, 20px);
+      @include remSize(line-height, 20px);
+    
+      @include media-breakpoint-up(md) {
+        @include remSize(font-size, 30px);
+        @include remSize(line-height, 30px);
+      }
+ 
+      @include focus {
+      background: $color-shadow;
+      
+    }
+    }
+  }
+  @include media-breakpoint-up(md) {
+    @include remSize(font-size, 20px);
+    @include remSize(line-height, 20px);
+    @include align-vertical-horizontal;
+    width: 100%;
+  }
+  @include media-breakpoint-up(lg) {
+    @include remSize(font-size, 25px);
+    @include remSize(line-height, 25px);
+  }
+}
+
+

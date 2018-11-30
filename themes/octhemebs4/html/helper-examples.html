@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html lang="en-ca">
+<head>
+  <title>Useful bootstrap classes for layout</title>
+  <meta charset="UTF-8">
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="main">
+    <!-- start content here -->
+
+    <h1>Joule classes for use in code view of Ckeditor</h1>
+
+<p>These are some examples of classes that have been simplified for faster migration.</p>
+
+<p>All classes are responsive. For example, the <code>split</code> classes will stack the columns on mobile and arrange borders appropriately</p>
+
+<h2>Useful bootstrap classes for layout</h2>
+
+<p>Since the site uses bootstrap 4, you can also use bootstrap classes.</p>
+
+<ul>
+	<li><a href="https://getbootstrap.com/docs/4.0/getting-started/introduction/">All bootstrap documentation</a></li>
+	<li><a href="https://getbootstrap.com/docs/4.0/utilities/spacing/">Spacing, responsive margins and padding</a></li>
+	<li><a href="https://getbootstrap.com/docs/4.0/utilities/text/#text-alignment">Text alignment</a></li>
+	<li><a href="https://getbootstrap.com/docs/4.0/utilities/sizing/">Sizing</a></li>
+</ul>
+
+<hr />
+<h2>Class examples</h2>
+
+<p class="bk-grey clr-white">Grey background white text</p>
+
+<hr />
+<p class="bk-black clr-white">Black background white text</p>
+
+<hr />
+<p class="clr-pink">pink text</p>
+
+<hr />
+<p class="clr-blue">blue text</p>
+
+<hr />
+<p class="bk-grey clr-white-focus">White on focus/hover</p>
+
+<hr />
+<p class="bk-grey clr-pink-focus">pink on focus/hover</p>
+
+<hr />
+<p class="bk-grey clr-blue-focus">blue on focus/hover</p>
+
+<hr />
+<p class="bk-grey clr-black-focus">black on focus/hover</p>
+
+<hr />
+<p class="bk-grey">grey background</p>
+
+<hr />
+<p class="bk-light-grey">light grey background</p>
+
+<hr />
+<p class="bk-pink">pink background</p>
+
+<hr />
+<p class="bk-blue">blue background</p>
+
+<hr />
+<p class="bk-grey-focus">grey background on hover/focus</p>
+
+<hr />
+<p class="bk-light-grey-focus">light grey background background on hover/focus</p>
+
+<hr />
+<p class="bk-pink-focus">pink background background on hover/focus</p>
+
+<hr />
+<p class="bk-blue-focus">blue background background on hover/focus</p>
+
+<hr />
+<p class="attention">Text style: attention</p>
+
+<hr />
+<p class="featured-text">Text style: featured text</p>
+
+<hr />
+
+<p class="featured-text-normal">Text style: featured text normal</p>
+
+<hr />
+
+<p class="featured-text-small">Text style: featured small</p>
+
+<hr />
+
+<p class="text-md">Text style: medium</p>
+
+<hr />
+
+<p class="text-large">Text style: large</p>
+
+<hr />
+
+<h2 class="style02">H2 style: style 02</h2>
+
+<hr />
+
+
+<div class="split-2">
+<div>First column (put it a div)</div>
+
+<div>Second column (in the second div). If you add more divs, each will be full width on mobile and 50% md and up</div>
+</div>
+
+<hr />
+<div class="split-3">
+<div>First column (put it a div)</div>
+
+<div>Second column (in the second div)</div>
+
+<div>Third column (in the third div)</div>
+</div>
+
+<hr />
+<div class="split-4">
+<div>First column (put it a div)</div>
+
+<div>Second column (in the second div)</div>
+
+<div>Third column (in the third div)</div>
+
+<div>Fourth column (in the fourth div)</div>
+</div>
+
+<hr />
+<div class="split-2-bdr">
+<div>2 columns with border</div>
+
+<div>Second column with border. If you add more divs, each will be full width on mobile and 50% md and up</div>
+</div>
+
+<hr />
+<div class="split-3-bdr">
+<div>First column (put it a div)</div>
+
+<div>Second column (in the second div)</div>
+
+<div>Third column (in the third div)</div>
+</div>
+
+<hr />
+<div class="split-4-bdr">
+<div>First column (put it a div)</div>
+
+<div>Second column (in the second div)</div>
+
+<div>Third column (in the third div)</div>
+
+<div>Fourth column (in the fourth div)</div>
+</div>
+
+<hr />
+<div class="full-width bk-grey clr-white">
+<p>if you need something full width. The outer div has to wrap around some block level element. This can only be used on full width items. It won't work within a grid</p>
+</div>
+
+<hr />
+<p><a class="button-primary" href="#">Button Primary</a> <a class="button-secondary" href="#">Button Secondary</a> <a class="button-outline clr-pink" href="#">Outline button: the link and outline will be whatever color you set</a></p>
+
+<hr />
+<div class="clear-all">If you are getting weird layout because of how Drupal floats images in Ckeditor, apply <code>clear-all</code> to the block element under the image</div>
+
+<div class="clear-all">&nbsp;</div>
+
+<div class="clear-all">
+<hr /></div>
+
+<hr />
+<div class="bk-img p-4 clr-white" style="background-image: url(/sites/default/files/inline-images/bg-mountains_1.jpg);">
+<h2>Using background images</h2>
+
+<p>The easiest way to get a background image working in ckeditor is to:</p>
+
+<ol>
+	<li>apply the appropriate background image class</li>
+	<li>upload the image using ckeditor's image uploader</li>
+	<li>switch to source code view</li>
+	<li>copy the path to the image</li>
+	<li>in the block level element you want the image applied to, add <code> style="background-image: url(../url-to-image/image.jpg);"</code></li>
+	<li>between the brackets <code>(../)</code> add the path you copied</li>
+	<li>Delete the reference to the image that ckeditor created</li>
+</ol>
+</div>
+
+<hr />
+<div class="bk-img-br p-4 clr-white" style="background-image: url(/sites/default/files/inline-images/bg-mountains_1.jpg);">
+<h2>Background positioning</h2>
+
+<p>by default, background images are centered horizontally and vertically and will expand (or shrink) to cover the entire background area.</p>
+
+<p>You can position the start point of the background image by using<br />
+<code>bk-img-tr</code> (top right)<br />
+<code>bk-img-tl</code> (top left)<br />
+<code>bk-img-bl</code> (bottom left)<br />
+<code>bk-img-br</code> (bottom right)</p>
+</div>
+
+<hr />
+<div class="bk-img-br bk-img-contain bk-blue clr-white p-4" style="background-image: url(/sites/default/files/inline-images/bg-mountains_1.jpg);">
+<h2>Containing a background image</h2>
+
+<p>If you want the entire background image to be contained within the block level element, use one of the positioning classes with <code>bk-img-contain</code>.</p>
+</div>
+
+<hr />
+<p>Set a min width on inline elements</p>
+
+<div class="inline-block bk-pink clr-white mnw-100">min 100px;</div>
+
+<div class="inline-block bk-pink clr-white mnw-125">min 125px;</div>
+
+<div class="inline-block bk-blue clr-white mnw-150">150px;</div>
+
+<div class="inline-block bk-pink clr-white mnw-175">min 175px;</div>
+
+<div class="inline-block bk-blue clr-white mnw-200">min 200px;</div>
+
+<div class="inline-block bk-pink clr-white mnw-225">min 225px;</div>
+
+<div class="inline-block bk-blue clr-white mnw-250">min 250px;</div>
+
+<hr />
+<p>Set max width on block level elements</p>
+
+<div class="bk-blue clr-white mxw-100">max 100px;</div>
+
+<div class="bk-pink clr-white mxw-125">max 125px;</div>
+
+<div class="bk-blue clr-white mxw-150">max 150px;</div>
+
+<div class="bk-pink clr-white mxw-175">max 175px;</div>
+
+<div class="bk-blue clr-white mxw-200">max 200px;</div>
+
+<div class="bk-pink clr-white mxw-225">max 225px;</div>
+
+<div class="bk-blue clr-white mxw-250">max 250px;</div>
+
+<hr />
+<p class="bk-grey clr-white mxw-250 center-block">Centre block level element (or inline-block)</p>
+
+<div class="border-dotted p-3">Border dotted</div>
+
+<hr>
+
+<div class="border-dotted-t p-3">Border dotted top</div>
+
+<hr>
+
+<div class="border-dotted-r p-3">border dotted right</div>
+
+<hr>
+
+<div class="border-dotted-b p-3">border dotted bottom</div>
+
+<hr>
+
+<div class="border-dotted-l p-3">border dotted left</div>
+
+<hr />
+<hr />
+<h2>HTML</h2>
+
+<p><strong>Below are examples of what HTML elements will look like with no styles applied</strong></p>
+
+<h1>Typography</h1>
+
+<h1>h1</h1>
+
+<h2>h2</h2>
+
+<h3>h3</h3>
+
+<h4>h4</h4>
+
+<h5>h5</h5>
+
+<h6>h6</h6>
+
+<p>Paragraph</p>
+
+<p>Another paragraph to see how it relates to the previous paragraph</p>
+
+<p>This is <sub>Subtext</sub></p>
+
+<p>This is <sup>Super Text</sup></p>
+
+<p>This is a paragraph with <a href="#">a link in it</a></p>
+
+<ul>
+	<li>unordered list 1</li>
+	<li>unordered list 2
+	<ul>
+		<li>Sublist 1</li>
+		<li>Sublist 2</li>
+		<li>Sublist 3</li>
+	</ul>
+	</li>
+	<li>unordered list 3</li>
+</ul>
+
+<ol>
+	<li>ordered list 1</li>
+	<li>ordered list 2</li>
+	<li>ordered list 3</li>
+</ol>
+
+<blockquote>
+<h2>Heading 2 in a blockquote</h2>
+
+<p>Blockquote body: Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur aliquet quam id dui posuere blandit. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Nulla porttitor accumsan tincidunt.</p>
+<cite>This is a citation</cite></blockquote>
+
+<p><code>this is code<br />
+&lt;ol&gt;<br />
+&lt;li&gt;ordered list 1&lt;/li&gt;<br />
+&lt;li&gt;ordered list 2&lt;/li&gt;<br />
+&lt;li&gt;ordered list 3&lt;/li&gt;<br />
+&lt;/ol&gt; </code></p>
+
+<pre>
+    			  this is preformatted 
+
+    			&lt;ol&gt;
+
+    			  &lt;li&gt;ordered list 1&lt;/li&gt;
+
+    			  &lt;li&gt;ordered list 2&lt;/li&gt;
+
+    			  &lt;li&gt;ordered list 3&lt;/li&gt;
+
+    			&lt;/ol&gt;
+    			</pre>
+
+<address>111 some street<br />
+City<br />
+Province, Country<br />
+A1B 2C3</address>
+
+<h2>Forms</h2>
+
+<form><label>Email address</label> <input type="email" /> <label>Password</label> <input type="password" /> <label for="select-list-multiple">Select List Multiple</label> <select id="select-multiple" multiple="multiple"><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option> </select> <label for="textarea01">Text area</label><textarea id="textarea01" rows="4"></textarea> <label for="input-file">File input</label> <input id="input-file" type="file" /><br />
+<input id="checkbox_color_01" name="color" type="checkbox" value="color_01" /> <label for="checkbox_color_01">Red</label><br />
+<input id="color_02" name="color" type="checkbox" value="color_02" /> <label for="checkbox_color_02">Green</label><br />
+<input id="color_03" name="color" type="checkbox" value="color_03" /> <label for="checkbox_color_03">Blue</label><br />
+<input disabled="disabled" id="color_04" name="color" type="checkbox" value="color_04" /> <label for="checkbox_color_04">Yellow (disabled)</label><br />
+<label for="select-list">Select List</label> <select id="select-list"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option> </select><br />
+<input checked="checked" id="radio01" name="input-radios" type="radio" value="color_01" /> <label for="radios_color_01">Violet</label><br />
+<input id="radios_color_02" name="input-radios" type="radio" value="color_02" /> <label for="radios_color_02">Magenta</label><br />
+<input class="form-check-input" disabled="disabled" id="radios_color_03" name="input-radios" type="radio" value="color_03" /> <label for="radios_color_03">Gold (disabled)</label><br />
+<input class="form-check-input" id="radios_color_04" name="input-radios" type="radio" value="color_04" /> <label for="radios_color_04">Ochre</label><br />
+<button type="submit">Submit</button></form>
+
+    
+    
+    
+    
+    <!-- /end content here -->
+    
+  </div><!-- /main -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js">
+  </script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js">
+  </script> 
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js">
+  </script>
+</body>
+</html>

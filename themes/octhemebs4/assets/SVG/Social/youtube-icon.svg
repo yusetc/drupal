@@ -1,0 +1,18 @@
+<svg id="youtube" data-name="youtube" class="icon ico-youtube" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 146 146">
+  <defs>
+    <style>
+      .yt-circle{
+      fill:none;
+      stroke:#e42e29;
+      stroke-miterlimit:10;
+      stroke-width:4px;
+      }
+      
+      .yt-arrow{
+      fill:#e42e29;
+      }
+    </style>
+  </defs>
+  <circle class="yt-circle" cx="73" cy="72.2" r="67.01"/>
+  <path class="yt-arrow" d="M108.75 57.62s-.71-5-2.9-7.25a10.45 10.45 0 0 0-7.31-3.09C88.33 46.55 73 46.55 73 46.55s-15.31 0-25.52.73a10.45 10.45 0 0 0-7.31 3.09c-2.19 2.22-2.9 7.25-2.9 7.25a110.2 110.2 0 0 0-.73 11.81V75a110.2 110.2 0 0 0 .73 11.81s.71 5 2.9 7.24c2.77 2.91 6.42 2.82 8 3.12 5.84.56 24.81.73 24.81.73s15.33 0 25.54-.76a10.4 10.4 0 0 0 7.33-3.14c2.19-2.21 2.9-7.24 2.9-7.24a110.2 110.2 0 0 0 .73-11.76v-5.57a110.2 110.2 0 0 0-.73-11.81zM65.47 81.67v-20.5l19.71 10.28z" id="Lozenge"/>
+</svg>

@@ -1,0 +1,120 @@
+//main menu - 
+.menu--main {
+  padding: 1.25rem 0;
+
+  @include media-breakpoint-up(lg) {
+    padding: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+
+  .navbar-collapse {
+    background-color: $color-primary;
+
+    @include media-breakpoint-up(lg) {
+      background-color: transparent;
+
+      li a {
+        @include fancyUnderline;
+      }
+    }
+  }
+
+  .navbar-nav {
+    a.nav-link {
+      padding: 0.5rem 0.8rem; 
+    }
+  }
+
+  a {
+    color: white;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: .5rem 1rem;
+
+    @include fontSize(20px);
+    @include focus {
+      //text-decoration: underline;
+      //color: white;
+    }
+
+    &:focus {
+      color: white;
+      background-color: $color-font-secondary;
+    }
+
+    @include media-breakpoint-up(lg) {
+      color: $color-middle-dark;
+
+      @include fontSize(25px);
+    }
+  }
+
+  .nav-main--item--active-trail {
+    a {
+       @include media-breakpoint-up(lg) {
+          color: $color-font-secondary;
+      }
+      &:focus {
+        color: white;
+        background-color: $color-font-secondary;
+        text-decoration: none;
+      }
+
+    }
+  }
+
+  .clinical-dropdown {
+    position: static !important;
+    width: 100%;
+
+
+    .dropdown-toggle {
+      padding-left: 0.5rem;
+      
+      &::after {
+        border: solid;
+        border-color: white;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 5px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+      }
+
+      @include media-breakpoint-up(lg) {
+        &::after {
+          border-color: $color-secondary;
+        }
+      }
+    }
+    &.show {
+      .dropdown-toggle {
+        &::after {
+          transform: rotate(-135deg);
+          -webkit-transform: rotate(-135deg);
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+
+  .clinical-megamenu {
+    padding: 1rem;
+    background-color: $color-font-secondary;
+    width: 100%;
+    margin-top: 0;
+    border: 0;
+    border-radius: 0;
+  }
+
+  @include media-breakpoint-up(lg) {
+    .clinical-megamenu {
+      width: $content-max-width;
+    }
+  }
+
+}

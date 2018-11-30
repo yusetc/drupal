@@ -1,0 +1,10 @@
+.notice-copyright {
+  max-width: $content-max-width;
+  @include contentPadding;
+  margin: 0 auto;
+  text-align: center;
+  color: $color-font-secondary;
+  font-weight: 600;
+  @include fontSize(20px);
+  margin-bottom: 2rem;
+}

@@ -1,0 +1,319 @@
+//##########################
+//###### development #######
+//##########################
+
+//use to help see things for dev purposes
+@mixin dev($color: #CC7578) {
+  background-color: rgba($color, 0.4) !important;
+}
+
+.dev {
+  @include dev;
+}
+//##########################
+//######   Layout    #######
+//##########################
+@mixin contentContainer {
+  max-width: $content-max-width;
+  margin: 0 auto;
+}
+
+//used to keep contained block level elements constrained to the general content area
+@mixin wrapElements {
+  h1, h2, h3,
+  h4, h5, h6,
+  p, img, ul, ol,
+  address, article, canvas, dd, 
+  div, dl, dt, fieldset, figcaption, 
+  figure, footer, form, hr, li, main, nav, 
+  section, table, tfoot, video {
+    @include contentContainer;
+  }
+}
+
+//################################
+//######    Shortcuts      #######
+//################################
+
+// adds all headings into a selector
+@mixin headings {
+  h1, h2, h3,
+  h4, h5, h6 {
+    @content;
+  }
+}
+
+@mixin textElements {
+  p, ol, ul, blockquote {
+    @content;
+  }
+
+}
+
+
+//include hover, focus and active states
+@mixin focus {
+  &:hover,
+  &:focus,
+  &:active {
+    @content;
+  }
+}
+
+// adds text input filds into a selector
+@mixin form-input-text {
+  input[type=email],
+  input[type=text],
+  input[type=password],
+  input[type=search] {
+    @content;
+  }
+}
+
+// adds checkboxes and radio fields into a selector
+@mixin form-input-choice {
+  input[type="checkbox"],
+  input[type="radio"] {
+    @content;
+  }
+}
+
+
+
+//##########################
+//###### Positioning #######
+//##########################
+
+//align things vetically, parent container needs `position: relative or absolute;`
+// note, these are custom, bootstrap has it's own alignment classes. Use these if bootstrap isn't working for you
+@mixin align-vertical {
+  position: absolute;
+  top: 50%;
+  transform: perspective(1px) translateY(-50%);
+}
+
+//align things horizintally
+@mixin align-horizontal {
+  position: absolute;
+  left: 50%;
+  transform: perspective(1px) translateX(-50%);
+}
+
+//align things horizintally and vertically
+@mixin align-vertical-horizontal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//negate alignment
+@mixin align-negate {
+  position: static;
+  top: auto;
+  left: auto;
+  transform: none;
+}
+
+//clear everything above and below a block level element
+@mixin clearAll {
+  @include clearfix;
+   &:before {
+   display: block;
+    content: "";
+    clear: both;
+ }
+}
+
+//#############################
+//######   Functions    #######
+//#############################
+
+//convert px to rem
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+
+  @return #{$remSize}rem;
+}
+
+//keep preportions
+@function calcrectangle($rectwidth, $rectheight) {
+  @return $rectheight / $rectwidth * 100 + "%";
+}
+
+//##########################
+//######   Sizing    #######
+//##########################
+
+//keep correct prpoprtions of a rectangle when resizing screen 
+//USE: pass a width and height value to rectangle mixin
+//EXAMPLE: div  {@include rectangle(600px,300px);}
+//values have to be same format, but you can use px (300px,100px), % (100%, 60%) or numeric (3,1) values 
+//rectangle will fill width of it's container
+
+@mixin rectangle($width, $height) {
+  width: 100%;
+  position: relative;
+
+  &:before {
+    content: "";
+    display: block;
+    padding-top: calcrectangle($width, $height);
+  }
+}
+
+@mixin remSize($property, $size) {
+  #{$property}: $size;
+
+  //Fallback in px
+  #{$property}: calculateRem($size);
+}
+
+@mixin contentPadding {
+  padding: 0 1rem;
+
+  @include media-breakpoint-up(lg) {
+    padding: 0;
+  }
+}
+
+//responsive ratios, usually for images, backgrounds etc
+//use exampple `@include responsiveRatio(16,9);`
+@mixin responsiveRatio($x,$y, $pseudo: false) {
+    $padding: unquote( ( $y / $x ) * 100 + '%' );
+    @if $pseudo {
+        &:before {
+            @include pseudo($pos: relative);
+            width: 100%;
+            padding-top: $padding;
+        }
+    } @else {
+        padding-top: $padding;
+    }
+}
+
+//################################
+//###### Buttons and links #######
+//################################
+
+@mixin fancyUnderline($color: $color-primary) {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: $color;
+    transition: all .3s;
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    &::before {
+      width: 100%;
+    }
+  }
+}
+
+//################################
+//######      Selectors    #######
+//################################
+@mixin even(){
+  &:nth-child(even) {
+    @content
+  }
+}
+
+@mixin odd(){
+  &:nth-child(odd) {
+    @content
+  }
+}
+
+//################################
+//######    Typography     #######
+//################################
+
+// this function/mixin calculates px to rem. IT does assume 1rem is 16px wich is normally the case in most browsers
+// to use it, just declare somethiing line `@include fontSize(32px);` which will render css `font-size: 2rem` with a fallback of `fontsize 32px`
+//you can use this with media queries on the `<html>` tag and change the base rem size. this will make everything else scale accordingly
+
+@mixin fontSize($size) {
+  font-size: $size !important;
+
+  //Fallback in px
+  font-size: calculateRem($size) !important;
+}
+
+//###########################################################
+//######    Bootstrap, classy and drupal overrides    #######
+//###########################################################
+
+//reverse sr-only
+// by default, Drupal applies .sr-only to some elements (such as block titles) to make them available only to screenreaders. Instead of messing with templates, you can use this to reverse sr-only
+@mixin sr-only-reverse {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  padding: inherit !important;
+  overflow: auto !important;
+  clip: auto !important;
+  white-space: normal !important;
+}
+
+//override bootstrap container padding
+@mixin override-bootstrap-container {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+
+  .container,
+  .container-fluid {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+}
+
+//################################
+//######     Animations    #######
+//################################
+
+//bootstrap includes it's one transitions for many things, if bootstrap isn't doing it for you, use one of these
+
+//give smooth transitions to buttons
+@mixin transition-button {
+  transition: background-color .15s, color .15s;
+}
+
+//give smooth transition to text
+@mixin transition-text {
+  transition: color .15s, color .15s;
+}
+
+//give smooth transition to all state changes
+@mixin transition-all {
+  transition: all .15s, color .15s ease-in-out;
+}
+
+//transition svg fill
+@mixin transition-svg {
+  transition: fill .15s ease-in-out;
+}
+
+// Fade in
+@mixin animate-fade-in($time: 1s) {
+  animation: fadein $time;
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+//general block styles
+
+.block-search {
+  flex-grow: 1 !important;
+  margin-right: 2rem;
+  h2 {
+    @extend .sr-only;
+  }
+  @include media-breakpoint-up(lg) {
+    position: absolute;
+    right: 0;
+    z-index: 666;
+    margin-right: 0;
+    margin-top: 1rem;
+  
+  }
+  
+  form {
+    @extend .form-inline;
+    border: 1px solid $color-light;
+    overflow: hidden;
+    padding: 0 !important;
+    position: relative;
+    
+    @include remSize(border-radius, 20px);
+    * {
+      height: $thumb;
+    }
+    
+    .js-form-type-search {
+      border: 0;
+      width: 100%;
+    }
+  }
+  input[type=search]{
+   border: 0;
+  //width: 100% !important;
+  @include media-breakpoint-up(md) {
+  // min-width: auto;  
+    }
+ }
+  
+  input[type=submit] {
+    border: 0;
+    position: absolute;
+    right: 0;
+    background: $color-light;
+    @extend .text-hide;
+    background-image: url('../images/search.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    height: $thumb;
+    width: $thumb;
+    display: block;
+    border-radius: 20px 0 0 20px;
+  }
+}
+
+.block-search form input[type=search] {
+  @include media-breakpoint-up(lg) {
+    min-width: 400px !important;
+  
+  }
+  
+}

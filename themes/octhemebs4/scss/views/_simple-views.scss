@@ -1,0 +1,14 @@
+// this sheet is for minor views fixes
+//if a style needs less than about 20 lines of styling, out it here
+
+.block-views-blockoc-show-card-on-page-block-2 {
+  > h2 {
+    color: $color-primary;
+  }
+}
+
+.podcast-releases {
+  .views-row {
+    border-top: 3px dotted $color-middle;
+  }
+}

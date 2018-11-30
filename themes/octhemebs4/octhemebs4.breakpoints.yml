@@ -1,0 +1,39 @@
+# Media queries are the same as those used by bootstrap 4
+# Referrence https://getbootstrap.com/docs/4.0/layout/overview/
+
+#Extra small device and up. this is the default
+octhemebs4.default:
+  label: default
+  mediaQuery: ''
+  weight: 0
+  multipliers:
+    - 1x
+#Small devices (landscape phones, 576px and up)
+octhemebs4.small:
+  label: small
+  mediaQuery: 'min-width: 576px)'
+  weight: 0
+  multipliers:
+    - 1x
+#Medium devices (tablets, 768px and up)
+octhemebs4.medium:
+  label: medium
+  mediaQuery: 'min-width: 768px'
+  weight: 1
+  multipliers:
+    - 1x
+#Large devices (desktops, 992px and up)
+octhemebs4.large:
+  label: large
+  mediaQuery: 'min-width: 992px'
+  weight: 1
+  multipliers:
+    - 1x
+#Extra large devices (large desktops, 1200px and up)   
+octhemebs4.extralarge:
+  label: extralarge
+  mediaQuery: 'min-width: 1200px'
+  weight: 2
+  multipliers:
+    - 1x
+

@@ -1,0 +1,61 @@
+
+//custom styles in CK editor can only be applied to block level elements. 
+// This sets up styles to be used in ckEditor
+
+//provide a way for people to deselect styles
+.cke-none {}
+
+// primary buttom
+.cke-button-primary {
+  margin: 1rem 0;
+ text-align: center;
+ @include clearAll;
+    a {
+      @extend .button-primary;
+      display: inline-block;
+    }
+}
+
+.cke-button-secondary {
+  margin: 1rem 0;
+ text-align: center;
+ @include clearAll;
+    a {
+      @extend .button-secondary;
+      display: inline-block;
+    }
+}
+
+
+// banner
+.cke-banner {
+  background: $color-secondary;
+  color: white;
+  margin: 0;
+  text-align: center;
+  a {
+    @extend .button-outline-white;
+  }
+}
+@include headings {
+  &.cke-banner {
+    padding: 1.25rem 1.25rem 0;
+    @include fontSize(30px);
+    font-weight: normal;
+  }
+}
+@include textElements {
+  &.cke-banner {
+    text-align: left;
+    padding: 0 1.25rem;
+     &:first-of-type {
+    padding-top: 1.25rem;
+  }
+    &:last-of-type {
+    padding-bottom: 1.25rem;
+  }
+  }
+}
+
+
+

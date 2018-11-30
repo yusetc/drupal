@@ -1,0 +1,23 @@
+// header region
+//styles specific to the header
+
+.region-header {
+  @include contentPadding;
+  margin-top: 1rem;
+  #block-octhemebs4-branding {
+    @include media-breakpoint-up(md) {
+      @include remSize (width, 300px);
+    
+    }
+    a {
+      display: block;
+      img {
+        display: block;
+        margin: 0 auto;
+        background: white;
+      }
+    }
+  }
+
+  }
+  

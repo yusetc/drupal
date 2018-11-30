@@ -1,0 +1,5 @@
+//fixes for MS Edge
+
+@supports (-ms-ime-align:auto) {
+//put your fixes in this query to target edge only
+}

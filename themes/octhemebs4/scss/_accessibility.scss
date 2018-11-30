@@ -1,0 +1,26 @@
+//Styles specifically for accessibility. 
+
+a {
+  &:focus {
+    color: white;
+    background: $color-primary;
+    border: 0;
+    outline: 0;
+  }
+}
+
+a.cancel-focus {
+  &:focus {
+    color: auto !important;
+    background: transparent !important;
+  }
+}
+
+.block-system-branding-block {
+  a  {
+    &:focus {
+      color: auto !important;
+      background: transparent !important;
+    }
+  }
+}

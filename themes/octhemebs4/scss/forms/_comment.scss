@@ -1,0 +1,68 @@
+//Comment form
+
+.field--type-comment {
+  border-top: 1px solid $color-middle;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  
+
+  
+  > .comment {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 3px dotted $color-middle;
+  }
+  
+  > .comment:nth-of-type(1) {
+      border-top: 0;
+    }
+  
+}
+
+.comment-form__title {
+  font-size: 1.15rem !important;
+  margin-bottom: 0;
+  margin-top: 2rem;
+  font-weight: 500;
+}
+
+.comment {
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: .25rem;
+  }
+  
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
+.indented {
+  margin-left: 1.5rem;
+  .comment {
+    background: $color-extra-light;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: .3rem;
+  }
+}
+
+.comment-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  @extend .text-sm;
+  > div {
+    padding-left: .87rem;
+    padding-right: .87rem;
+    border-right: 1px solid $color-middle;
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      border-right: 0;
+    }
+  }
+}

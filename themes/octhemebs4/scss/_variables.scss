@@ -1,0 +1,101 @@
+// #### Colours ####
+
+//Note: when naming colour variables, don't use a colour name as the variable. Include it as a comment. This way, if a colour needs to be changes, things will still make sense if a value changes.
+/*
+# Background on utility nav: #202D37
+# Copyright notice: #00506c
+# <p>, <h1>, <h2> .. etc: #464644
+# Primary Nav: #4d4d4f
+# border on search etc: #d1d3d4
+# bright pink used various places (page titles, icons, buttons): #d61673
+# inline link color: #337ab7
+# background on asides: #eeeeee
+# bright blue on some asides: #00abc9
+#vertical dotted borders: #ccc
+*/
+
+//white
+$primary-content-background-color: rgb(255,255,255) !default;
+
+//#d61673 Bright Pink used on buttons, headings etc
+$color-primary: #d61673 !default;
+
+//#00abc9 bright blue
+$color-secondary: #00abc9 !default;
+
+//##0f0f0f Dark grey, almost black
+$color-font-primary: #464644 !default; 
+
+//#00506c dark blue
+$color-font-secondary: #00506c !default;
+
+//#337ab7 mid range grey-blue, used on inline links
+$color-font-inline-link: #337ab7 !default;
+
+//#4d4d4f extra light grey, almost white
+$color-extra-light: #eeeeee !default;
+
+//#d1d3d4 a pale grey
+//a light grey, use for borders etc on dark blackground
+$color-light: #d1d3d4 !default;
+
+//#ccc a medium grey, normally used borders
+$color-middle: #ccc !default;
+
+//#4d4d4f a dark grey
+$color-middle-dark: #4d4d4f !default;
+
+//#202D37 dark grey, almost black
+$color-dark: #202D37 !default;
+
+//transparent black, used for shadows
+$color-shadow: rgba(0, 0, 0, 0.1);
+
+// #### Sizes ####
+
+//good touch size for mobile
+$thumb: 40px;
+
+//the max width for content
+$content-max-width: 1120px;
+
+
+//###### paths #######
+// ie. $arrow-black: "../images/icon-right-arrow.svg";
+
+
+//###### Breakpoints ######
+// Media queries are the same as those used by bootstrap 4
+// Referrence https://getbootstrap.com/docs/4.0/layout/overview/
+
+//You should use bootstrap mixin for media queries ie `@include media-breakpoint-up(md) {}`
+//if you need break widths for something other than a media query, use:
+
+//min breakpoints
+$sm-up: 576px;
+$md-up: 768px;
+$lg-up: 992px;
+$xl-up: 1200px;
+
+//max breakpoints, normally you shouldn't need max breakpoints, but if you do
+$sm-down: 575.98px;
+$md-down: 767.98px;
+$lg-down: 991.98px;
+$xl-down: 991.98px;
+
+
+//bootstrap and classy overrides
+// this adds some additional spacers not available to bootstrap
+
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge((
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 2),
+  6: ($spacer * 3),
+  7: ($spacer * 4)
+), $spacers);

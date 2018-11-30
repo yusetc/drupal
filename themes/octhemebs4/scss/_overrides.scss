@@ -1,0 +1,246 @@
+
+//Overrides
+// use this to override classes set by bootstrap, drupal and contributed modules
+
+
+//keep admin manu above everything
+body.toolbar-fixed .toolbar-oriented .toolbar-bar {
+    position: fixed;
+    z-index: 99999;
+}
+
+
+/* Fixing Issue with views bootstrap that causes mobile grid to render too many columns */
+.sm-col-fix {
+  flex-basis: unset !important;
+}
+
+//fix classy width problem
+.layout,
+.layout--onecol {
+  width: 100%;
+}
+
+
+//add some space around classys status messages
+.messages {
+  margin: 2.5rem;
+}
+
+//fix drupal inline fields not working correctly
+.field--label-inline {
+  display: table-row-group;
+  padding-bottom: 1rem;
+  .field__label {
+  font-weight: 600;
+  padding-right: 1rem;
+  display: table-cell;
+  
+
+
+}
+
+}
+
+//get rid of focus on items
+.no-focus {
+  @include focus {
+    background: transparent;
+  }
+  &:focus {
+    background: transparent;
+  }
+
+}
+//override Drupal display of instructor credentials on the course_instructor display mode
+
+.instructor-info {
+  .field--name-field-academic-degree {
+    .field__item {
+      &:before {
+        content: ",\00A0";
+        display: inline-block;
+      }
+    }    
+  }
+
+  .field--name-node-title {
+    float: left;
+  }
+}
+
+//change bootstrap hamburger icon for drop down menu
+
+$navbar-light-toggler-icon-bg-oc:      str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$color-primary}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default;
+
+.navbar-light{
+  .navbar-toggler-icon {
+    background-image: $navbar-light-toggler-icon-bg-oc !important;
+  }
+  .navbar-toggler {
+    border: 1px solid $color-primary !important;
+  }
+}
+
+
+//override bootstrap spacing
+
+.form-group {
+  margin-bottom: 2em;
+}
+
+//fix issue where bootstrap accordion buttons are extending text outside parent container
+
+[id*="accordion"] {
+  .btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    white-space: normal;
+  }
+}
+
+
+//override slick carousel 
+.small-carousel {
+  [id*="slick-"] {
+  
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+    
+    .slick-prev {
+      &:before {
+      position: relative;
+      bottom: 30px;
+      content: "";
+      display: inline-block;
+      width: 2em;
+      height: 2em;
+      color: #9a9a9a;
+      border-right: .2em solid #9a9a9a;
+      border-top: .2em solid #9a9a9a;
+      transform: rotate(225deg);
+     }
+     @include focus {
+       &:before {
+         border-color: $color-primary;
+       }
+     }
+    }
+    
+    .slick-next {
+      &:before {
+      position: relative;
+      bottom: 30px;
+      content: "";
+      display: inline-block;
+      width: 2em;
+      height: 2em;
+      color: #9a9a9a;
+      color: red;
+      border-right: .2em solid #9a9a9a;
+      border-top: .2em solid #9a9a9a;
+      transform: rotate(45deg);
+     }
+     @include focus {
+       &:before {
+         border-color: $color-primary;
+       }
+     }
+  
+    }
+    
+    
+    ul.slide__content {
+      margin: 0 3rem;
+    }
+  
+  }
+  .slick-arrow {
+  border-radius: 0;
+  width: auto;
+  @include remSize(height,150px);
+  cursor:pointer;
+}
+}
+
+.large-carousel {
+  .slick__arrow {
+    max-width: $content-max-width;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  .slick-dots {
+    li button::before {
+      color: white;
+      
+    }
+    @include media-breakpoint-up(md) {
+      @include remSize(bottom,40px);
+    
+    }
+  }
+  .slick-arrow::before {
+    color: $color-primary;
+  }
+  
+}
+
+
+//video
+
+.video-wrapper {
+  max-width: 100%;
+}
+
+//page specific overides
+
+.context-about-us,
+.context-a-propos-de-joule {
+  
+  h1.page-title {
+    @extend .sr-only;
+  }
+  
+  .region-top-content {
+    background-color: $color-primary;
+  }
+  
+}
+
+.context-evidence-clinicalkey {
+    h1.page-title {
+    @extend .sr-only;
+  }
+}
+
+.cr-sidebar-left-filters {
+  .form-check {
+    @extend .pl-0;
+  }
+}
+
+#textbook-block {
+  .page-item {
+    &.active .page-link {
+      z-index: 1;
+      color: $pagination-active-color;
+      background-color: $color-primary;
+      border-color: $color-primary;
+    }
+  }
+}
+
+.cr-search-block {
+  #reset-to-default {
+    margin-left: 0.3rem;
+  }
+  .row.justify-content-between {
+    @extend .text-sm;
+  }
+}
+
+

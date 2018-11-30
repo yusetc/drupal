@@ -1,0 +1,20 @@
+<svg id="twitter" data-name="twitter" class="icon ico-twitter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 146 146">
+  <defs>
+    <style>
+      .tw-circle{fill:none;
+      stroke:#429bd5;
+      stroke-width:4px;
+      }
+      .tw-circle,
+      .tw-bird{
+      stroke-miterlimit:10;
+      }
+      .tw-bird{
+      fill:#429bd5;
+      stroke:#fff;
+      }
+    </style>
+  </defs>
+  <circle class="tw-circle" cx="72.67" cy="73" r="67.01"/>
+  <path class="tw-bird" d="M60.19 103.82c28.62 0 44.27-23.71 44.27-44.27v-2a31.76 31.76 0 0 0 7.76-8 30.82 30.82 0 0 1-8.94 2.44 15.58 15.58 0 0 0 6.84-8.6 31.22 31.22 0 0 1-9.88 3.78A15.57 15.57 0 0 0 73.69 61.3 44.19 44.19 0 0 1 41.62 45a15.57 15.57 0 0 0 4.82 20.77 15.4 15.4 0 0 1-7.07-2v.2a15.57 15.57 0 0 0 12.49 15.34 15.47 15.47 0 0 1-7 .27 15.59 15.59 0 0 0 14.51 10.81A31.21 31.21 0 0 1 40 97.06a32.79 32.79 0 0 1-3.7-.22 44.13 44.13 0 0 0 23.85 7" id="Logo_FIXED" data-name="Logo FIXED"/>
+</svg>

@@ -1,0 +1,21 @@
+//################################
+//######    Typography     #######
+//################################
+
+// this function/mixin calculates px to rem. IT does assume 1rem is 16px wich is normally the case in most browsers
+// to use it, just declare somethiing line `@include fontSize(32px);` which will render css `font-size: 2rem` with a fallback of `fontsize 32px`
+//you can use this with media queries on the `<html>` tag and change the base rem size. this will make everything else scale accordingly
+
+@mixin textElements {
+  h1, h2, h3,h4, h5, h6, 
+  p, ol, ul, blockquote {
+    @content;
+  }
+
+}
+
+@include textElements {
+  &.cke-banner {
+    margin: 1.25rem !important;
+  }
+}

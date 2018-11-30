@@ -1,0 +1,31 @@
+// Accounting preferences menu
+.accounting-preferences {
+	.dropdown-toggle {
+		&::after {
+			vertical-align: middle;
+		}
+	}
+
+	.dropdown-menu  {
+		margin: 0;
+		border-radius: 0;
+		border: 0;
+		width: 100%;
+		box-shadow: 2px 2px 11px -2px rgba(77,77,79,0.67);
+		
+		li {
+			a:focus,
+			a:hover {
+				color: $color-font-primary;
+			}
+		}
+	}
+}
+
+.lang-en .accounting-preferences .dropdown-menu {
+	min-width: 9rem;
+}
+ 
+.lang-fr .accounting-preferences .dropdown-menu {
+	min-width: 12rem;
+}

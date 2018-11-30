@@ -1,0 +1,18 @@
+<svg id="linkedin" data-name="LinkedIn" class="icon ico-linkedin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 146 146">
+  <defs>
+    <style>
+      .li-circle{
+      fill:none;
+      stroke:#0078b5;
+      stroke-miterlimit:10;
+      stroke-width:4px;
+      }
+      
+      .li-logo{
+      fill:#0078b5;
+      }
+    </style>
+  </defs>
+  <circle class="li-circle" cx="73" cy="73" r="67.01"/>
+  <path class="li-logo" d="M99.37 42.05H46.62a4.52 4.52 0 0 0-4.57 4.46v53a4.52 4.52 0 0 0 4.57 4.49h52.75a4.53 4.53 0 0 0 4.63-4.52v-53a4.53 4.53 0 0 0-4.63-4.43zm-39 52.74h-9.15V65.26h9.19zm-4.55-33.57a5.33 5.33 0 1 1 5.32-5.32 5.32 5.32 0 0 1-5.32 5.32zm39 33.57h-9.2V80.43c0-3.43-.06-7.83-4.77-7.83s-5.51 3.73-5.51 7.58v14.61h-9.17V65.26H75v4h.13a9.64 9.64 0 0 1 8.68-4.77c9.3 0 11 6.12 11 14.07z"/>
+</svg>
